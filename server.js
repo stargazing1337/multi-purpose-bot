@@ -1,22 +1,17 @@
-// server.js
-// where your node app starts
+const Discord = require('discord.js')
+const client = new Discord.Client();
 
-// init project
-const express = require('express');
-const app = express();
+const prefix = '!'
 
-// we've started you off with Express, 
-// but feel free to use whatever libs or frameworks you'd like through `package.json`.
+// events
 
-// http://expressjs.com/en/starter/static-files.html
-app.use(express.static('public'));
-
-// http://expressjs.com/en/starter/basic-routing.html
-app.get('/', function(request, response) {
-  response.sendFile(__dirname + '/views/index.html');
+client.on('ready',() => { //when bot is ready
+  
+  console.log('Bot is ready with username: ' + client.user.username) // Log when bot is ready
+  client.user.setActivity(`basics`, {type: "WATCHING"});
 });
 
-// listen for requests :)
-const listener = app.listen(process.env.PORT, function() {
-  console.log('Your app is listening on port ' + listener.address().port);
-});
+client.on('message', (message) => { // when message is recieved
+  
+  if(message.author.bot) return //If the author is a bot exit code
+  if (!message.content.startsWith(prefix)) return; // 
