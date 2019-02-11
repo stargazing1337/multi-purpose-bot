@@ -20,12 +20,10 @@ client.on('message', (message) => { // When message is recieved
   
   if(command === "ping") { // Command ping
     var pong = 'Pong! ' + Math.round(client.ping) + 'ms'
-    message.channel.send(pong)
-    //const embed = new Discord.RichEmbed()
-    //.setColor(0xFF0000)
-    //.SetTitle('Pong!')
-    //.addField (args, [pong])
-    //message.channel.send({embed: embed})
+    const embed = new Discord.RichEmbed()
+    .SetTitle('Pong!')
+    .addField (args, [pong])
+    message.channel.send({embed: embed})
     //message.channel.send('Pong! ' + Math.round(client.ping) + 'ms')
     
   }
