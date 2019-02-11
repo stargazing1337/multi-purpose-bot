@@ -6,9 +6,8 @@ const prefix = '!'
 // events
 
 client.on('ready',() => { //when bot is ready
-  
   console.log('Bot is ready with username: ' + client.user.username) // Log when bot is ready
-  client.user.setActivity(`basics`, {type: "WATCHING"});
+  client.user.setActivity(`people type !help`, {type: "WATCHING"});
 });
 
 client.on('message', (message) => { // when message is recieved
