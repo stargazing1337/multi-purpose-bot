@@ -16,10 +16,10 @@ client.on('message', (message) => { // when message is recieved
   if (!message.content.startsWith(prefix)) return; // If the message doesnt start with the prefix exit code
   
   const args = message.content.slice(prefix.length).trim().split(/ +/g); //define args
-  const command = args.shift.toLowerCase(); // define command
+  const command = args.shift().toLowerCase(); // define command
   
   if(command === "ping") { //Command ping
-    message.channel.send('Pong! ' + Math.round(client.ping) + ' ms')
+    message.channel.send('Pong! ' + Math.round(client.ping) + 'ms')
     
   }
   
