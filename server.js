@@ -15,14 +15,18 @@ client.on('message', (message) => { // When message is recieved
   
   const args = message.content.slice(prefix.length).trim().split(/ +/g); // Define args
   const command = args.shift().toLowerCase(); // Define command
-  const embed = new Discord.RicheEmbed()
+
+  
   
   if(command === "ping") { // Command ping
-    const embed = new Discord.RicheEmbed()
-    .setColor(0x)
-    .SetTitle('Pong!')
-    .Addfield
-    message.channel.send('Pong! ' + Math.round(client.ping) + 'ms')
+    var pong = 'Pong! ' + Math.round(client.ping) + 'ms'
+    message.channel.send(pong)
+    //const embed = new Discord.RichEmbed()
+    //.setColor(0xFF0000)
+    //.SetTitle('Pong!')
+    //.addField (args, [pong])
+    //message.channel.send({embed: embed})
+    //message.channel.send('Pong! ' + Math.round(client.ping) + 'ms')
     
   }
 })
