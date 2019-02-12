@@ -29,14 +29,14 @@ client.on('message', (message) => { // When message is recieved
   if (command === "help") {  
     const embed = new Discord.RichEmbed()
     .setColor(0x7289DA)
-    .setTitle('Help Menu')
-    .addField('poo',['Help'])
-    message.channel.send({embed:embed})    
+    .addField(`Prefix`, `!`, true)
+    .setFooter("Prefix: ! | This bot is still under construction")
+    message.channel.send(embed)    
   }
   
   let totalSeconds = (client.uptime / 1000);
-  let days = Math.floor(totalSeconds / 86400);
-  let hours = Math.floor(totalSeconds / 3600);
+  //let days = Math.floor(totalSeconds / 86400);
+  //let hours = Math.floor(totalSeconds / 3600);
   totalSeconds %= 3600;
   let minutes = Math.floor(totalSeconds / 60);
   let seconds = Math.round(totalSeconds % 60);
@@ -51,6 +51,9 @@ client.on('message', (message) => { // When message is recieved
     .addField(`Uptime`, `${uptime}`, true)
     .addField(`Servers`, `${client.guilds.size}`, true)
     .addField(`Users`, `${client.users.size}`, true)
+    .addField(`Website`, `[Not available yet]`, true)
+    .addField(`Discord`, `[Not available yet]`, true)
+    .addField(`Invite`, `[Not available yet]`, true)
     .addField(`Developer`, `Kotobro#5754`, true)
     .setFooter("Prefix: ! | This bot is still under construction")
     .setTimestamp()
