@@ -61,7 +61,6 @@ client.on('message', (message) => { // When message is recieved
     message.channel.send(embed)    
   }
   
-    // Purge
     if (command.startsWith('prune')) { // This time we have to use startsWith, since we will be adding a number to the end of the command.
         // We have to wrap this in an async since awaits only work in them.
         async function prune() {
