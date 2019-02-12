@@ -62,7 +62,7 @@ client.on('message', (message) => { // When message is recieved
   }
   
     if (command.startsWith('prune')) { // This time we have to use startsWith, since we will be adding a number to the end of the command.
-      message.channel.bulkDelete(args[0]).then(()=> {
+      message.channel.bulkDelete(10).then(()=> {
       message.channel.send(`Cleared ${args[0]} messages.`).then(msg => msg.delete(5000))
       })}
 })
