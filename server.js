@@ -28,8 +28,9 @@ client.on('message', (message) => { // When message is recieved
   
   if (command === "help") {  
     const embed = new Discord.RichEmbed()
+  //  .setTitle("This is your title, it can hold 256 characters")
+    //.setDescription("This is the main body of text, it can hold 2048 characters.")
     .setColor(0x7289DA)
-    .setDescription("This is the main body of text, it can hold 2048 characters.")
     .setHeader("Hey")
     .addField(`Prefix`, `!`, true)
     .setFooter("Prefix: ! | This bot is still under construction")
