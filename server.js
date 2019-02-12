@@ -61,8 +61,6 @@ client.on('message', (message) => { // When message is recieved
     message.channel.send(embed)    
   }
   
-
-  
   if (command === "prune"){
     message.channel.fetchMessages()
           .then(messages => {
