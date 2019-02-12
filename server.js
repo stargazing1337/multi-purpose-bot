@@ -36,11 +36,21 @@ client.on('message', (message) => { // When message is recieved
     message.channel.send({embed:embed})    
   }
   
+  let totalSeconds = (client.uptime / 1000);
+  let days = Math.floor(totalSeconds / 86400);
+  let hours = Math.floor(totalSeconds / 3600);
+  totalSeconds %= 3600;
+  let minutes = Math.floor(totalSeconds / 60);
+  let seconds = totalSeconds % 60;
+  
+  let uptime = `${days} days, ${hours} hours, ${minutes} minutes and ${seconds} seconds`;
+  
   if (command === "about") {
     const embed = new Discord.RichEmbed()
     .setColor(0x7289DA)
     .addField(`Version`, `1.0`, true)
-    .addField(`Node JS`, `8.11.3`, true)
+    .addField(`Node JS`, `8.x`, true)
+    .addField(`Library`, `[discord.js](https://discord.js.org/#/)`, true)
     .addField(`Uptime`, `${uptime}`, true)
     .addField(`Servers`, `${client.guilds.size}`, true)
     .setFooter("Prefix: ! | This bot is still under construction")
