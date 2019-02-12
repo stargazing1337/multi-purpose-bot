@@ -43,7 +43,7 @@ client.on('message', (message) => { // When message is recieved
   let minutes = Math.floor(totalSeconds / 60);
   let seconds = totalSeconds % 60;
   
-  let uptime = `${days} days, ${hours} hours, ${minutes} minutes and ${seconds} seconds`;
+  let uptime = `${days}, ${hours}:${minutes};${seconds} seconds`;
   
   if (command === "about") {
     const embed = new Discord.RichEmbed()
