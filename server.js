@@ -26,9 +26,7 @@ client.on('message', (message) => { // When message is recieved
     message.channel.send({embed: embed})    
   }
   
-  if (command === "help") {
-   // message.channel.send ("Help1!!!!!!!!!!!!!!")
-    
+  if (command === "help") {  
     const embed = new Discord.RichEmbed()
     .setColor(0x7289DA)
     .setTitle('Help Menu')
@@ -42,7 +40,7 @@ client.on('message', (message) => { // When message is recieved
   totalSeconds %= 3600;
   let minutes = Math.floor(totalSeconds / 60);
   let seconds = Math.round(totalSeconds % 60);
-  let uptime = `${days} days, ${hours} hours, ${minutes} minutes and ${seconds} seconds`;
+  let uptime = `${minutes} minutes and ${seconds} seconds`;
   
   if (command === "about") {
     const embed = new Discord.RichEmbed()
@@ -53,6 +51,7 @@ client.on('message', (message) => { // When message is recieved
     .addField(`Uptime`, `${uptime}`, true)
     .addField(`Servers`, `${client.guilds.size}`, true)
     .addField(`Users`, `${client.users.size}`, true)
+    .addField(`Developer`, `Kotobro#5754`, true)
     .setFooter("Prefix: ! | This bot is still under construction")
     .setTimestamp()
     message.channel.send(embed)    
