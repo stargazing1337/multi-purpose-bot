@@ -41,9 +41,8 @@ client.on('message', (message) => { // When message is recieved
   let hours = Math.floor(totalSeconds / 3600);
   totalSeconds %= 3600;
   let minutes = Math.floor(totalSeconds / 60);
-  let seconds = totalSeconds % 60;
-  
-  let uptime = `${days}, ${hours}:${minutes};${seconds} seconds`;
+  let seconds = Math.round(totalSeconds % 60);
+  let uptime = `${days} days, ${hours} hours, ${minutes} minutes and ${seconds} seconds`;
   
   if (command === "about") {
     const embed = new Discord.RichEmbed()
@@ -53,8 +52,10 @@ client.on('message', (message) => { // When message is recieved
     .addField(`Library`, `[discord.js](https://discord.js.org/#/)`, true)
     .addField(`Uptime`, `${uptime}`, true)
     .addField(`Servers`, `${client.guilds.size}`, true)
+    .addField(`Users`, `${client.users.size}`, true)
     .setFooter("Prefix: ! | This bot is still under construction")
-    message.channel.send({embed:embed})    
+    .setTimestamp()
+    message.channel.send(embed)    
   }
 })
 client.login(process.env.TOKEN); // Never show your token bruh
