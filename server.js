@@ -25,8 +25,10 @@ client.on('message', (message) => { // When message is recieved
   }
   
   if (command === "help") {
-    const embed = new Discord.RichEmbed().setColor(0x7289DA).addTitle('Help Menu').addField(args, ['Commands'])
-    message.channel.send({embed: embed})    
+   // message.channel.send ("Help1!!!!!!!!!!!!!!")
+    
+    const helpembed = new Discord.RichEmbed().setColor(0x7289DA).addTitle('Help Menu').addField(['Help'])
+    message.channel.send({embed: helpembed})    
   }
 })
 client.login(process.env.TOKEN); // Never show your token bruh
