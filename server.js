@@ -33,7 +33,17 @@ client.on('message', (message) => { // When message is recieved
     .setColor(0x7289DA)
     .setTitle('Help Menu')
     .addField('poo',['Help'])
-    
+    message.channel.send({embed:embed})    
+  }
+  
+  if (command === "about") {
+    const embed = new Discord.RichEmbed()
+    .setColor(0x7289DA)
+    .addField(`Version`, `1.0`, true)
+    .addField(`Node JS`, `8.11.3`, true)
+    .addField(`Uptime`, `${uptime}`, true)
+    .addField(`Servers`, `${client.guilds.size}`, true)
+    .setFooter("Prefix: ! | This bot is still under construction")
     message.channel.send({embed:embed})    
   }
 })
