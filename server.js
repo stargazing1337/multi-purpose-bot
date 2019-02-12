@@ -20,14 +20,21 @@ client.on('message', (message) => { // When message is recieved
 
   if(command === "ping") { // Command ping
     var pong = 'It took ' + Math.round(client.ping) + 'ms to ping.'
-    const embed = new Discord.RichEmbed().setColor(0x7289DA).addField('Pong!', [pong])
+    const embed = new Discord.RichEmbed()
+    .setColor(0x7289DA)
+    .addField('Pong!', [pong])
     message.channel.send({embed: embed})    
   }
   
   if (command === "help") {
    // message.channel.send ("Help1!!!!!!!!!!!!!!")
     
-    const embed = new Discord.RichEmbed().setColor(0x7289DA).setTitle('Help Menu').addField('poo',['Help'])
+    const embed = new Discord.RichEmbed()
+    .setColor(0x7289DA)
+    .setTitle('Help Menu')
+    .setFooter("Prefix: ! | This bot is still under construction", "https://a.ppy.sh/5414370_1530431526.jpeg")
+    .addField('poo',['Help'])
+    
     message.channel.send({embed:embed})    
   }
 })
