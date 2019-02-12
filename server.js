@@ -62,15 +62,20 @@ client.on('message', (message) => { // When message is recieved
   }
   
   if (command === "prune"){
-  let messagecount = parseInt(args[0], 10) ? parseInt(args[0], 10) : 1;
-  msg.channel.messages.fetch({limit: 100})
-  .then(messages => {
-    let msg_array = messages.array();
-    msg_array = msg_array.filter(m => m.author.id === client.user.id);
-    msg_array.length = messagecount + 1;
-    msg_array.map(m => m.delete().catch(console.error));
+    message.channel.fetchMessages()
+          .then(messages => {
+            message.channel.bulkDelete(messages);
+
+            var messagesDeleted = messages.array().length; // number of messages deleted
+            // Logging the number of messages deleted on both the channel and console.
+            message.channel.sendMessage("Deletion of messages successful. Total messages deleted: "+messagesDeleted);
+            console.log('Deletion of messages successful. Total messages deleted: '+messagesDeleted)
+          })
+          .catch(err => {
+            console.log('Error while doing Bulk Delete');
+            console.log(err);
+});
   }
-)}
   
 })
 client.login(process.env.TOKEN); // Never show your token bruh
