@@ -19,10 +19,10 @@ client.on('message', (message) => { // When message is recieved
   const command = args.shift().toLowerCase(); // Define command
 
   if(command === "ping") { // Command ping
-    var pong = 'It took ' + Math.round(client.ping) + 'ms to ping.'
+    var pong = `It took ` + Math.round(client.ping) + `ms to ping.`
     const embed = new Discord.RichEmbed()
     .setColor(0x7289DA)
-    .addField('Pong!', pong)
+    .addField(`Pong!`, pong)
     message.channel.send({embed: embed})    
   }
   
@@ -39,11 +39,11 @@ client.on('message', (message) => { // When message is recieved
   
   let totalSeconds = (client.uptime / 1000);
   //let days = Math.floor(totalSeconds / 86400);
-  //let hours = Math.floor(totalSeconds / 3600);
+  let hours = Math.floor(totalSeconds / 3600);
   totalSeconds %= 3600;
   let minutes = Math.floor(totalSeconds / 60);
   let seconds = Math.round(totalSeconds % 60);
-  let uptime = `${minutes} minutes and ${seconds} seconds`;
+  let uptime = `${hours} hrs ${minutes} mins ${seconds} secs`;
   
   if (command === "about") {
     const embed = new Discord.RichEmbed()
