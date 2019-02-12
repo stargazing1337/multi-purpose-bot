@@ -13,18 +13,16 @@ client.on('message', (message) => { // When message is recieved
   if(message.author.bot) return // If the author is a bot exit code
   if (!message.content.startsWith(prefix)) return; // If the message doesnt start with the prefix exit code
   
-  const args = message.content.slice(prefix.length).trim().split(/ +/g); // Define args
+  const args = message.content.slice(prefix.length).trim().split(/ +g/); // Define args
   const command = args.shift().toLowerCase(); // Define command
 
   
   
   if(command === "ping") { // Command ping
-    var pong = 'Pong! ' + Math.round(client.ping) + 'ms'
-    const embed = new Discord.RichEmbed()
-    .SetTitle('Pong!')
-    .addField (args, [pong])
-    message.channel.send({embed: embed})
-    //message.channel.send('Pong! ' + Math.round(client.ping) + 'ms')
+    //var pong = 'Pong! ' + Math.round(client.ping) + 'ms'
+    //const embed = new Discord.RichEmbed().SetTitle('Pong!').addField(args, pong)
+    //message.channel.send({embed: embed})
+    message.channel.send('Pong! ' + Math.round(client.ping) + 'ms')
     
   }
 })
