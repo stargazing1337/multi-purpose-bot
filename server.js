@@ -13,7 +13,9 @@ client.on('message', (message) => { // When message is recieved
   if(message.author.bot) return // If the author is a bot exit code
   if (!message.content.startsWith(prefix)) return; // If the message doesnt start with the prefix exit code
   
-  const args = message.content.slice(prefix.length).trim().split(/ +/g); // Define args
+  let messageArray = message.content.split(" ");
+  let args = messageArray.slice(1);
+  //const args = message.content.slice(prefix.length).trim().split(/ +/g); // Define args
   const command = args.shift().toLowerCase(); // Define command
 
   if(command === "ping") { // Command ping
