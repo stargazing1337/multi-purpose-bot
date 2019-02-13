@@ -1,6 +1,13 @@
 const botconfig = require('./botconfig.json')
 const Discord = require('discord.js')
 const client = new Discord.Client();
+const fs = require("fs");
+
+fs.readdir("./commands/", (err, file) => {
+  if(err) console.log(err);
+  
+  let jsfile = files.filter(f => f.split(".").pop() === "js")
+})
 
 client.on('ready',() => { // When bot is ready
   console.log('Bot is ready with username: ' + client.user.username) // Log when bot is ready
