@@ -10,13 +10,14 @@ client.on('ready',() => { // When bot is ready
 client.on('message', (message) => { // When message is recieved
   
   if(message.author.bot) return // If the author is a bot exit code
-  if (!message.content.startsWith(prefix)) return; // If the message doesnt start with the prefix exit code
+  //if (!message.content.startsWith(prefix)) return; // If the message doesnt start with the prefix exit code
   
-  const prefix = botconfig.prefix;
-  const args = message.content.slice(prefix.length).trim().split(/ +/g); // Define args
-  const command = args.shift().toLowerCase(); // Define command
+  let prefix = botconfig.prefix;
+  let messageArray = message.content.split(" ");
+  let cmd = messageArray[0]
+  let args = messageArray.slice(1);
 
-  if(command === "ping") { // Command ping
+  if(cmd === `${prefix}ping`) { // Command ping
     var pong = `It took ` + Math.round(client.ping) + `ms to ping.`
     const embed = new Discord.RichEmbed()
     .setColor(0x7289DA)
@@ -24,7 +25,7 @@ client.on('message', (message) => { // When message is recieved
     message.channel.send({embed: embed})    
   }
   
-  if (command === "help") {  
+  if (cmd === "help") {  
     const embed = new Discord.RichEmbed()
     .setColor(0x7289DA)
     .setTitle(`Help Menu`)
@@ -43,7 +44,7 @@ client.on('message', (message) => { // When message is recieved
   let seconds = Math.round(totalSeconds % 60);
   let uptime = `${hours} hrs ${minutes} mins ${seconds} secs`;
   
-  if (command === "about") {
+  if (cmd === "about") {
     const embed = new Discord.RichEmbed()
     .setColor(0x7289DA)
     .addField(`Version`, `1.0`, true)
@@ -61,7 +62,7 @@ client.on('message', (message) => { // When message is recieved
     message.channel.send(embed)    
   }
   
-    if (command.startsWith('prune')) { // This time we have to use startsWith, since we will be adding a number to the end of the command.
+    if (cmd.startsWith('prune')) { // This time we have to use startsWith, since we will be adding a number to the end of the command.
       message.channel.bulkDelete(10).then(()=> {
       message.channel.send(`Cleared ${args[0]} messages.`).then(msg => msg.delete(5000))
       })}
