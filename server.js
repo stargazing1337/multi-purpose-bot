@@ -12,7 +12,7 @@ client.on('message', (message) => { // When message is recieved
   if(message.author.bot) return // If the author is a bot exit code
   if (!message.content.startsWith(prefix)) return; // If the message doesnt start with the prefix exit code
   
-  let prefix = botconfig.prefix;
+  const prefix = botconfig.prefix;
   const args = message.content.slice(prefix.length).trim().split(/ +/g); // Define args
   const command = args.shift().toLowerCase(); // Define command
 
