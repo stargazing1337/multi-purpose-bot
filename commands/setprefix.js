@@ -3,7 +3,7 @@ const fs = require("fs");
 
 module.exports.run = async (client, message, args, prefix) => {
   if (!message.member.hasPermission("MANAGE_SERVER")) return message.reply("NO");
-  if (!args[0] || args[0 == "help"]) return message.reply(`Usage: prefix <desired prefix here>`)
+  if (!args[0] || args[0 == "help"]) return message.reply(`Usage: ${prefix} <desired prefix here>`)
 
   let prefixes = JSON.parse(fs.readFileSync("./prefixes.json", "utf8"));
   
@@ -23,5 +23,5 @@ module.exports.run = async (client, message, args, prefix) => {
 }
 
 module.exports.help = {
-  name: "prefix"
+  name: "setprefix"
 }
