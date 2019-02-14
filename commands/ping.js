@@ -5,7 +5,7 @@ module.exports.run = async (client, message, args) => {
     const embed = new Discord.RichEmbed()
     .setColor(0x7289DA)
     .addField(`Pong!`, pong)
-    message.channel.send({embed: embed})    
+    message.channel.send(embed)    
 }
 
 module.exports.help = {
