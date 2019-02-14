@@ -31,8 +31,16 @@ client.on('message', (message) => { // When message is recieved
   //if (!message.content.startsWith(prefix)) return; // If the message doesnt start with the prefix exit code
   
   
-  let prefixes = JSON.parse(fs.readFileSync("./prefixes.json"))
-  let prefix = botconfig.prefix;
+  let prefixes = JSON.parse(fs.readFileSync("./prefixes.json", "utf8"));
+  if (!prefixes[message.guild.id]){
+   prefixes[message.guild.id] = { 
+     prefixes: botconfig.prefix
+   };
+  }
+  
+  let prefix = prefixes[message.guild.id].prefixes;
+  
+
   let messageArray = message.content.split(" ");
   let cmd = messageArray[0]
   let args = messageArray.slice(1);
