@@ -2,6 +2,7 @@ const botconfig = require('./botconfig.json')
 const Discord = require('discord.js')
 const client = new Discord.Client();
 const fs = require("fs");
+var prefix = prefix;
 client.commands = new Discord.Collection();
 
 fs.readdir("./commands/", (err, files) => {
@@ -30,16 +31,12 @@ client.on('message', (message) => { // When message is recieved
   if(message.author.bot) return // If the author is a bot exit code
   //if (!message.content.startsWith(prefix)) return; // If the message doesnt start with the prefix exit code
   
-  
-  
   let prefixes = JSON.parse(fs.readFileSync("./prefixes.json", "utf8"));
   if (!prefixes[message.guild.id]){
    prefixes[message.guild.id] = { 
      prefixes: botconfig.prefix
    };
   }
-  
-
 
   let messageArray = message.content.split(" ");
   let cmd = messageArray[0]
