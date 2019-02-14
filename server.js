@@ -31,6 +31,7 @@ client.on('message', (message) => { // When message is recieved
   //if (!message.content.startsWith(prefix)) return; // If the message doesnt start with the prefix exit code
   
   
+  
   let prefixes = JSON.parse(fs.readFileSync("./prefixes.json", "utf8"));
   if (!prefixes[message.guild.id]){
    prefixes[message.guild.id] = { 
@@ -38,14 +39,13 @@ client.on('message', (message) => { // When message is recieved
    };
   }
   
-  let prefix = prefixes[message.guild.id].prefixes;
-  
+
 
   let messageArray = message.content.split(" ");
   let cmd = messageArray[0]
   let args = messageArray.slice(1);
-  let commandFile = client.commands.get(cmd.slice(prefix.length))
-  if (commandFile) commandFile.run(client,message,args);
+  let prefix = prefixes[message.guild.id].prefixes;
+  if(prefix == cmd.slice(0,1)){ let commandFile = client.commands.get(cmd.slice(prefix.length)); if(commandFile) commandFile.run(client,message,args); };
   
     if (cmd.startsWith('prune')) { // This time we have to use startsWith, since we will be adding a number to the end of the command.
       message.channel.bulkDelete(10).then(()=> {
