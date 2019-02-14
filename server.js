@@ -30,6 +30,8 @@ client.on('message', (message) => { // When message is recieved
   if(message.author.bot) return // If the author is a bot exit code
   //if (!message.content.startsWith(prefix)) return; // If the message doesnt start with the prefix exit code
   
+  
+  let prefixes = JSON.parse(fs.readFileSync("./prefixes.json"))
   let prefix = botconfig.prefix;
   let messageArray = message.content.split(" ");
   let cmd = messageArray[0]

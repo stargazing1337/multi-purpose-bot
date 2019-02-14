@@ -19,7 +19,7 @@ module.exports.run = async (client, message, args) => {
   
   message.delete().catch(O_o=>{});
   reportsChannel.send(reportEmbed);
-  return
+  return;
 }
 
 module.exports.help = {
