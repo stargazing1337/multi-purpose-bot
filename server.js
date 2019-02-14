@@ -2,8 +2,9 @@ const botconfig = require('./botconfig.json')
 const Discord = require('discord.js')
 const client = new Discord.Client();
 const fs = require("fs");
+client.commands = new Discord.Collection();
 
-fs.readdir("./commands/", (err, file) => {
+fs.readdir("./commands/", (err, files) => {
   
   if(err) console.log(err);
   
@@ -12,6 +13,13 @@ fs.readdir("./commands/", (err, file) => {
     console.log("Couldn't find commands.");
     return
   }
+  
+  jsfile.forEach((f, i) =>{
+    let props = require (`./commands/${f}`);
+    console.log(`${f} loaded!`)
+    client.commands.set(props.help.name, props)
+  })
+  
 })
 
 client.on('ready',() => { // When bot is ready
@@ -28,6 +36,8 @@ client.on('message', (message) => { // When message is recieved
   let messageArray = message.content.split(" ");
   let cmd = messageArray[0]
   let args = messageArray.slice(1);
+  let commandFile = client.commands.get(cmd.slice(prefix.length))
+  if (commandFile) 
 
   if(cmd === `${prefix}ping`) { // Command ping
     var pong = `It took ` + Math.round(client.ping) + `ms to ping.`
