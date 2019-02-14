@@ -9,21 +9,21 @@ module.exports.run = async (client, message, args) => {
   let seconds = Math.round(totalSeconds % 60);
   let uptime = `${hours} hrs ${minutes} mins ${seconds} secs`;
   
-    const embed = new Discord.RichEmbed()
-    .setColor(0x7289DA)
-    .addField(`Version`, `1.0`, true)
-    .addField(`Node JS`, `8.x`, true)
-    .addField(`Library`, `[discord.js](https://discord.js.org/#/)`, true)
-    .addField(`Uptime`, `${uptime}`, true)
-    .addField(`Servers`, `${client.guilds.size}`, true)
-    .addField(`Users`, `${client.users.size}`, true)
-    .addField(`Website`, `[Not available yet]`, true)
-    .addField(`Discord`, `[Not available yet]`, true)
-    .addField(`Invite`, `[Not available yet]`, true)
-    .addField(`Developer`, `Kotobro#5754`, true)
-    .setFooter("Prefix: ! | This bot is still under construction")
-    .setTimestamp()
-    message.channel.send(embed)   
+  const embed = new Discord.RichEmbed()
+  .setColor(0x7289DA)
+  .addField(`Version`, `1.0`, true)
+  .addField(`Node JS`, `8.x`, true)
+  .addField(`Library`, `[discord.js](https://discord.js.org/#/)`, true)
+  .addField(`Uptime`, `${uptime}`, true)
+  .addField(`Servers`, `${client.guilds.size}`, true)
+  .addField(`Users`, `${client.users.size}`, true)
+  .addField(`Website`, `[Not available yet]`, true)
+  .addField(`Discord`, `[Not available yet]`, true)
+  .addField(`Invite`, `[Not available yet]`, true)
+  .addField(`Developer`, `Kotobro#5754`, true)
+  .setFooter("Prefix: ! | This bot is still under construction")
+  .setTimestamp()
+  message.channel.send(embed)   
 }
 
 module.exports.help = {
