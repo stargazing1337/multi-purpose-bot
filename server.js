@@ -37,52 +37,7 @@ client.on('message', (message) => { // When message is recieved
   let cmd = messageArray[0]
   let args = messageArray.slice(1);
   let commandFile = client.commands.get(cmd.slice(prefix.length))
-  if (commandFile) 
-
-  if(cmd === `${prefix}ping`) { // Command ping
-    var pong = `It took ` + Math.round(client.ping) + `ms to ping.`
-    const embed = new Discord.RichEmbed()
-    .setColor(0x7289DA)
-    .addField(`Pong!`, pong)
-    message.channel.send({embed: embed})    
-  }
-  
-  if (cmd === "help") {  
-    const embed = new Discord.RichEmbed()
-    .setColor(0x7289DA)
-    .setTitle(`Help Menu`)
-    .addField(`Info Commands`, "`help` `about` `ping`")
-    .addField(`Admin Commands`,"`help` `about` `ping`")
-    .setFooter("Prefix: ! | This bot is still under construction")
-    .setTimestamp()
-    message.channel.send(embed)    
-  }
-  
-  let totalSeconds = (client.uptime / 1000);
-  //let days = Math.floor(totalSeconds / 86400);
-  let hours = Math.floor(totalSeconds / 3600);
-  totalSeconds %= 3600;
-  let minutes = Math.floor(totalSeconds / 60);
-  let seconds = Math.round(totalSeconds % 60);
-  let uptime = `${hours} hrs ${minutes} mins ${seconds} secs`;
-  
-  if (cmd === "about") {
-    const embed = new Discord.RichEmbed()
-    .setColor(0x7289DA)
-    .addField(`Version`, `1.0`, true)
-    .addField(`Node JS`, `8.x`, true)
-    .addField(`Library`, `[discord.js](https://discord.js.org/#/)`, true)
-    .addField(`Uptime`, `${uptime}`, true)
-    .addField(`Servers`, `${client.guilds.size}`, true)
-    .addField(`Users`, `${client.users.size}`, true)
-    .addField(`Website`, `[Not available yet]`, true)
-    .addField(`Discord`, `[Not available yet]`, true)
-    .addField(`Invite`, `[Not available yet]`, true)
-    .addField(`Developer`, `Kotobro#5754`, true)
-    .setFooter("Prefix: ! | This bot is still under construction")
-    .setTimestamp()
-    message.channel.send(embed)    
-  }
+  if (commandFile) commandFile.run(client,message,args);
   
     if (cmd.startsWith('prune')) { // This time we have to use startsWith, since we will be adding a number to the end of the command.
       message.channel.bulkDelete(10).then(()=> {
