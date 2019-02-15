@@ -9,7 +9,7 @@ module.exports.run = async (client, message, args) => {
   let embed = new RichEmbed()
   .setAuthor(message.author.tag)
   .setColor("#FF9900")
-  .addField(replies[result]);
+  .addField("Coinflip", replies[result]);
   message.channel.send(embed);
 }
 
