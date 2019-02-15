@@ -1,14 +1,36 @@
-const {RichEmbed} = require("discord.js")
+module.exports.run = async (client, message, args, con) => {
+	if(!client.hasPermission(message, "MANAGE_MESSAGES")) return message.channel.send("You do not have permission to do this.");
 
-module.exports.run = async (client, message, args) => {
-  if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("You do not have sufficient priveliges.");
-  if (!args[0] || args[0 == "help"]) return message.reply(`Usage: !prune <Desired amount>`)
-  message.delete().catch(O_o=>{});
-  message.channel.bulkDelete(args[0]).then(() => {
-    message.channel.send(`:wastebasket:  |  Successfully deleted ${args[0]} messages from this channel!`).then(msg => msg.delete(5000));
-  });  
+	let mention = message.mentions.users.first();
+
+	let amount;
+	if(mention) {
+		amount = 100
+	} else {
+		amount = parseInt(args[0]);
+		if(!amount || amount < 1 && amount < 100) return message.channel.send("Please enter a number between 1 and 100.");
+		amount = Math.min(amount + 1, 100);
+	}
+
+	try {
+		let messages = await message.channel.fetchMessages({limit: amount});
+		messages = messages.filter(m => m.createdTimestamp >= Date.now() - 1179360000);
+		
+		let mention = message.mentions.users.first();
+		if(mention) messages = messages.filter(m => m.author.id === mention.id || m.content === message.content);
+
+		let pruned = messages.size;
+		if(pruned < 1) return message.channel.send("No prune-able messages were found.");
+		await message.channel.bulkDelete(messages);
+		
+		message.channel.send(`Prune successful. Deleted ${pruned === amount ? pruned - 1 : pruned} messages.`).then(m => m.delete(1000));
+	} catch(e) {
+		message.channel.send(`Prune failed: ${e.message}`);
+	}
 }
 
 module.exports.help = {
-  name: "prune"
+	name: "prune"
 }
+
+//:wastebasket:  |  Successfully deleted ${args[0]} messages from this channel!
