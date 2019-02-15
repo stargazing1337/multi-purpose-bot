@@ -1,4 +1,4 @@
-const Discord = require("discord.js")
+const {RichEmbed} = require("discord.js")
 
 module.exports.run = async (client, message, args) => {
   
@@ -8,7 +8,7 @@ module.exports.run = async (client, message, args) => {
   if (!message.member.hasPermission("MANAGE_MEMBERS")) return message.channel.send("You do not have sufficient priveliges.");
   if (bUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send("User cannot be banned.")
   
-  let embed = new Discord.RicheEmbed()
+  let embed = new RichEmbed()
   .setDescription("Ban")
   .setColor("#e56b00")
   .addField("Banned User", `${bUser} with ID ${bUser.id}`)

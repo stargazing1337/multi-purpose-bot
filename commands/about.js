@@ -1,4 +1,4 @@
-const Discord = require("discord.js")
+const {RichEmbed} = require("discord.js")
 
 module.exports.run = async (client, message, args) => {
   let totalSeconds = (client.uptime / 1000);
@@ -9,7 +9,7 @@ module.exports.run = async (client, message, args) => {
   let seconds = Math.round(totalSeconds % 60);
   let uptime = `${hours} hrs ${minutes} mins ${seconds} secs`;
   
-  const embed = new Discord.RichEmbed()
+  const embed = new  RichEmbed()
   .setColor(0x7289DA)
   .addField(`Version`, `1.0`, true)
   .addField(`Node JS`, `8.x`, true)
