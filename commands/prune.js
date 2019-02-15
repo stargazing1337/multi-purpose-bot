@@ -5,7 +5,7 @@ module.exports.run = async (client, message, args) => {
   if (!args[0] || args[0 == "help"]) return message.reply(`Usage: !prune <Desired amount>`)
   message.delete().catch(O_o=>{});
   message.channel.bulkDelete(args[0]).then(() => {
-    message.channel.send(`Cleared ${args[0]} messages.`).then(msg => msg.delete(5000));
+    message.channel.send(`:wastebasket:  |  Successfully deleted ${args[0]} messages from this channel!`).then(msg => msg.delete(5000));
   });  
 }
 
