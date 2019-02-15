@@ -5,7 +5,7 @@ module.exports.run = async (client, message, args) => {
     .setColor(0x7289DA)
     .setTitle(`Help Menu`)
     .addField(`Information Commands`, "`help` `about` `ping`")
-    .addField(`Moderation Commands`,"`ban` `kick` `prune` `setprefix`")
+    .addField(`Moderation Commands`,"`ban` `kick` `prune` `setprefix` `tempmute`")
     .addField(`User Commands`,"`report` `kick` `prune` `setprefix`")
     .setFooter("Prefix: ! | This bot is still under construction")
     .setTimestamp()
