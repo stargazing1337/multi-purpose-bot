@@ -10,10 +10,28 @@ module.exports.run = async (client, message, args) => {
        muterole = await message.guild.createRole({
        name: "muted",
        color: "#00000",
-         
+       permissions:[]
        })
-     }})
-}
+       message.guild.channels.forEach(async(channel, id) => {
+         await channel.overwritePermission(muterole, {
+         SEND_MESSAGES: false,
+         ADD_REACTIONS: false
+         });
+       });
+     }catch(e){
+     console.log(e.stack);
+     }
+  }
+  let mutetime = args[1];
+  if(!mutetime) return message.reply("Mute time not specified");
+  
+  await(tomute.addrole(muterole.id));
+  message.reply(`@${tomute.id}`)
+  
+  setTimeout(function(){
+
+  message.reply(`<@${tomute.id}> had been unmuted`);
+}, ms(mutetime));
 
 module.exports.help = {
   name: "tempmute"
