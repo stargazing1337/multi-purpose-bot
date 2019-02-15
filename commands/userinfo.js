@@ -1,7 +1,7 @@
 const { RichEmbed } = require("discord.js");
 const moment = require("moment");
 
-module.exports.run = (bot, message, args, con) => {
+module.exports.run = (client, message, args) => {
 	let target = message.mentions.members.first() || message.guild.members.get(args[0]) || message.member;
 
 	let createdAt = moment(target.user.createdAt).format("D MMM YYYY, h:mm a");
