@@ -8,7 +8,7 @@ module.exports.run = async (client, message, args) => {
   if (!message.member.hasPermission("MANAGE_MEMBERS")) return message.channel.send("You do not have sufficient priveliges.");
   if (bUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send("User cannot be banned.")
   
-  let banEmbed = new Discord.RicheEmbed()
+  let embed = new Discord.RicheEmbed()
   .setDescription("Ban")
   .setColor("#e56b00")
   .addField("Banned User", `${bUser} with ID ${bUser.id}`)
@@ -21,7 +21,7 @@ module.exports.run = async (client, message, args) => {
   if (!incidentChannel) return message.channel.send("Can't find incidents channel.");
   
   message.guild.member(bUser).ban(bReason)
-  incidentChannel.send(banEmbed);
+  incidentChannel.send(embed);
   
   return;
   

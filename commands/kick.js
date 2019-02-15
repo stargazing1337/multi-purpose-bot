@@ -8,7 +8,7 @@ module.exports.run = async (client, message, args) => {
   if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("You do not have sufficient priveliges.");
   if (kUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send("User cannot be kicked.")
   
-  let kickEmbed = new Discord.RicheEmbed()
+  let embed = new Discord.RicheEmbed()
   .setDescription("Kick")
   .setColor("#e56b00")
   .addField("Kicked User", `${kUser} with ID ${kUser.id}`)
@@ -21,7 +21,7 @@ module.exports.run = async (client, message, args) => {
   if (!incidentChannel) return message.channel.send("Can't find incidents channel.");
   
   message.guild.member(kUser).kick(kReason)
-  incidentChannel.send(kickEmbed);
+  incidentChannel.send(embed);
   return;
 }
 

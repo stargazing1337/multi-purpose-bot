@@ -15,13 +15,11 @@ module.exports.run = async (client, message, args, prefix) => {
   if (err) console.log(err)
   });
   
-  let sEmbed = new Discord.RichEmbed()
+  let embed = new Discord.RichEmbed()
   .setColor("FF9900")
   .setTitle("Prefix Set!")
   .setDescription(`Set to ${args[0]}`)
-  message.channel.send(sEmbed);
-  
-
+  message.channel.send(embed);
 }
 
 module.exports.help = {

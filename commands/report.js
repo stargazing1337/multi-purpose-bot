@@ -5,7 +5,7 @@ module.exports.run = async (client, message, args) => {
  if (!rUser) return message.channel.send("Couldn't find user.");
  let reason = args.join(" ").slice(22);
   
-  let reportEmbed = new Discord.RichEmbed()
+  let embed = new Discord.RichEmbed()
   .setDescription("Reports")
   .setColor(0x7289DA)
   .addField("Reported User", `${rUser} with ID: ${rUser.id}`)
@@ -18,7 +18,7 @@ module.exports.run = async (client, message, args) => {
   if (!reportsChannel) return message.channel.send("Couldn't find the reports channel.")
   
   message.delete().catch(O_o=>{});
-  reportsChannel.send(reportEmbed);
+  reportsChannel.send(embed);
   return;
 }
 
