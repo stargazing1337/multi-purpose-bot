@@ -1,5 +1,5 @@
 module.exports.run = async (client, message, args, con) => {
-	if(!client.hasPermission(message, "MANAGE_MESSAGES")) return message.channel.send("You do not have permission to do this.");
+	//if(!client.hasPermission(message, "MANAGE_MESSAGES")) return message.channel.send("You do not have permission to do this.");
 
 	let mention = message.mentions.users.first();
 
@@ -23,7 +23,7 @@ module.exports.run = async (client, message, args, con) => {
 		if(pruned < 1) return message.channel.send("No prune-able messages were found.");
 		await message.channel.bulkDelete(messages);
 		
-		message.channel.send(`Prune successful. Deleted ${pruned === amount ? pruned - 1 : pruned} messages.`).then(m => m.delete(1000));
+		message.channel.send(`:wastebasket:  |  Prune successful. Deleted ${pruned === amount ? pruned - 1 : pruned} messages.`).then(m => m.delete(5000));
 	} catch(e) {
 		message.channel.send(`Prune failed: ${e.message}`);
 	}
