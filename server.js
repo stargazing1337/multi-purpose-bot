@@ -38,10 +38,10 @@ client.on('message', (message) => { // When message is recieved
   let args = messageArray.slice(1);
   let prefix = prefixes[message.guild.id].prefixes;
   if(prefix == cmd.slice(0,1)) { 
-    let commandFile = client.commands.get(cmd.slice(prefix.length)); 
+    let commandFile = client.commands.get(cmd.slice(prefix.length));
     if(commandFile) commandFile.run(client,message,args);
   };
   console.log(cmd);
-  console.log(cmd.slice(prefix.length));
+  console.log(cmd);
 })
 client.login(botconfig.token); // Never show your token bruh
