@@ -41,6 +41,7 @@ client.on('message', (message) => { // When message is recieved
     let commandFile = client.commands.get(cmd.slice(prefix.length).toLowerCase());
     if(commandFile) commandFile.run(client,message,args);
   };
-  //console.log(cmd.slice(prefix.length).toLowerCase());
+  //console.log(cmd);
+    console.log(args[1]);
 })
 client.login(botconfig.token); // Never show your token bruh
