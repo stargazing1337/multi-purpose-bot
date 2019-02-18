@@ -1,5 +1,5 @@
 module.exports.run = async (client, message, args, con) => {
-	if(!client.hasPermission(message, "MANAGE_MESSAGES")) return message.channel.send("You do not have permission to do this.");
+	//if(!client.hasPermission(message, "MANAGE_MESSAGES")) return message.channel.send("You do not have permission to do this.");
 
 	let target = message.mentions.members.first() || message.guild.members.get(args[0]);
 	if(!target) return message.channel.send("Please provide a valid mention or ID.");
