@@ -42,6 +42,6 @@ client.on('message', (message) => { // When message is recieved
     if(commandFile) commandFile.run(client,message,args);
   };
   //console.log(cmd);
-    console.log(args[1]);
+    console.log(`${prefixes[message.guild.id].prefixes}`);
 })
 client.login(botconfig.token); // Never show your token bruh

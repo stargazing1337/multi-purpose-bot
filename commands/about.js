@@ -1,6 +1,6 @@
 const {RichEmbed} = require("discord.js")
 
-module.exports.run = async (client, message, args) => {
+module.exports.run = async (client, message, args, prefix) => {
   let totalSeconds = (client.uptime / 1000);
   //let days = Math.floor(totalSeconds / 86400);
   let hours = Math.floor(totalSeconds / 3600);
@@ -21,7 +21,7 @@ module.exports.run = async (client, message, args) => {
   .addField(`Discord`, `[Not available yet]`, true)
   .addField(`Invite`, `[Not available yet]`, true)
   .addField(`Developer`, `Kotobro#5754`, true)
-  .setFooter("Prefix: ! | This bot is still under construction")
+  .setFooter(`Prefix: ${prefix} | This bot is still under construction`)
   .setTimestamp()
   message.channel.send(embed)   
 }
