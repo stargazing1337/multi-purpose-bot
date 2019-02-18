@@ -2,26 +2,23 @@ ModBot
 =================
 
 Easily expandable, customizable and fully featured Discord moderation bot
+___
 
-
-
-Features
+Features  
 ------------
+
 
 Information Commands
 
-`help` `about` `ping`
-
-
+`help` `about` `ping`  
+  
 Moderation Commands
 
-`ban` `kick` `prune` `setprefix` `tempmute`
-
+`ban` `kick` `prune` `setprefix` `tempmute`  
 
 User Commands
 
-`report` `serverinfo` `userinfo`
-
+`report` `serverinfo` `userinfo`  
 
 Fun Commands
 
