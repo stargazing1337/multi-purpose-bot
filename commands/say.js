@@ -4,8 +4,8 @@ const errors = require("../utils/errors.js");
 module.exports.run = async (client, message, args) => {
 
   if(!args [0] || args[0] == "help"){
-    message.reply("Usage: !say <word or sentence>");
-    return;
+   message.reply("Usage: !say <word or sentence>");
+   return;
   }
   if(!message.member.hasPermission("MANAGE_MESSAGES")) return errors.noPerms(message, "MANAGE_MESSAGES");
   message.delete();
@@ -14,5 +14,6 @@ module.exports.run = async (client, message, args) => {
 }
 
 module.exports.help = {
-  name: "say"
+  name: "say",
+  help: ""
 }
