@@ -6,8 +6,8 @@ weather.find({search: args.join(" "), degreeType: 'F'}, function(err, result) { 
             if (err) message.channel.send(err);
 
             // We also want them to know if a place they enter is invalid.
-            if (result.length === 0) {
-                message.channel.send('**Please enter a valid location.**') // This tells them in chat that the place they entered is invalid.
+            if (!args[0] || args[0] == "help") {
+                message.reply("Usage: !weather <city>, <state/country>") // This tells them in chat that the place they entered is invalid.
                 return; // This exits the code so the rest doesn't run.
             }
 
