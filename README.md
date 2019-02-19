@@ -10,7 +10,7 @@ Features
 
 Information Commands
 
-`help` `about` `ping`  
+`help` `about` `ping` `weather` 
   
 Moderation Commands
 

@@ -40,8 +40,8 @@ client.on('message', (message) => { // When message is recieved
  //   let commandFile = client.commands.get(cmd.slice(prefix.length).toLowerCase());
   //  if(commandFile) commandFile.run(client,message,args);
   //};
-  if(message.content.startsWith(prefix)){
-let commandfile = client.commands.get(cmd.slice(prefix.length));
+if(message.content.startsWith(prefix)){
+let commandfile = client.commands.get(cmd.slice(prefix.length).toLowerCase());
 if(commandfile) commandfile.run(client,message,args);
 };
   //console.log(cmd);
