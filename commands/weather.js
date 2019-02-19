@@ -16,7 +16,7 @@ weather.find({search: args.join(" "), degreeType: 'F'}, function(err, result) { 
             var location = result[0].location; // This is a variable for the location part of the JSON output
 
             // Let's use an embed for this.
-            const embed = RichEmbed()
+            const embed = new RichEmbed()
                 .setDescription(`**${current.skytext}**`) // This is the text of what the sky looks like, remember you can find all of this on the weather-js npm page.
                 .setAuthor(`Weather for ${current.observationpoint}`) // This shows the current location of the weather.
                 .setThumbnail(current.imageUrl) // This sets the thumbnail of the embed
