@@ -4,7 +4,7 @@ const errors = require("../utils/errors.js");
 module.exports.run = async (client, message, args) => {
 
   if (!message.member.hasPermission("MANAGE_ROLES")) return errors.noPerms(message, "MANAGE_ROLES");
-  if(args[0] == "help"){
+  if(!args [0] || args[0] == "help"){
     message.reply("Usage: !removerole <user> <role>");
     return;
   }

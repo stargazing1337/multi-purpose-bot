@@ -14,7 +14,7 @@ Information Commands
   
 Moderation Commands
 
-`ban` `kick` `prune` `setprefix` `tempmute`  
+`ban` `kick` `prune` `prefix` `tempmute`  
 
 User Commands
 
