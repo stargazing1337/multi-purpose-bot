@@ -2,7 +2,6 @@ const botconfig = require('./botconfig.json')
 const Discord = require('discord.js')
 const client = new Discord.Client();
 const fs = require("fs");
-var prefix = prefix;
 client.commands = new Discord.Collection();
 
 fs.readdir("./commands/", (err, files) => {
@@ -42,6 +41,6 @@ client.on('message', (message) => { // When message is recieved
     if(commandFile) commandFile.run(client,message,args);
   };
   //console.log(cmd);
-    console.log(`${prefixes[message.guild.id].prefixes}`);
+    console.log(cmd.slice(0,1));
 })
 client.login(botconfig.token); // Never show your token bruh
