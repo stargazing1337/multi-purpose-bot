@@ -42,4 +42,4 @@ client.on('message', (message) => { // When message is recieved
 };
     console.log(cmd.slice(0,1));
 })
-client.login(process.env.token); // Never show your token bruh
+client.login(process.env.TOKEN); // Never show your token bruh

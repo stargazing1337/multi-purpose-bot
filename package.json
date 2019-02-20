@@ -15,7 +15,9 @@
     "ms": "^2.1.1",
     "moment": "^2.24.0",
     "weather-js": "^2.0.0",
-    "superagent": "^4.0.0"
+    "superagent": "^4.0.0",
+    "random-puppy": "^1.1.0",
+    "snekfetch": "^4.0.4"
   },
   "engines": {
     "node": "8.x"
