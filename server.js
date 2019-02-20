@@ -40,11 +40,10 @@ client.on('message', (message) => { // When message is recieved
  //   let commandFile = client.commands.get(cmd.slice(prefix.length).toLowerCase());
   //  if(commandFile) commandFile.run(client,message,args);
   //};
-if(message.content.startsWith(prefix)){
-let commandfile = client.commands.get(cmd.slice(prefix.length).toLowerCase());
-if(commandfile) commandfile.run(client,message,args);
+  if(message.content.startsWith(prefix)){
+  let commandfile = client.commands.get(cmd.slice(prefix.length).toLowerCase());
+  if(commandfile) commandfile.run(client,message,args);
 };
-  //console.log(cmd);
     console.log(cmd.slice(0,1));
 })
 client.login(botconfig.token); // Never show your token bruh

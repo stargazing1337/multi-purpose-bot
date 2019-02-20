@@ -5,7 +5,7 @@ module.exports.run = async (client, message, args) => {
     const embed = new RichEmbed()
     .setColor("#7289DA")
     .addField(`Pong!`, pong)
-    message.channel.send(embed)    
+    message.channel.send(embed)  
 }
 
 module.exports.help = {

@@ -3,8 +3,8 @@ const fs = require("fs");
 
 module.exports.run = async (client, message, args, cmd, prefix) => {
   if (!message.member.hasPermission("MANAGE_SERVER")) return message.reply("You do not have sufficient priveliges.");
-  if (!args[0] || args[0 == "help"]) return message.reply(`Usage: prefix <desired prefix here>`)
-  let prefixes = JSON.parse(fs.readFileSync("./prefixes.json", "utf8"));
+  if (!args[0] || args[0 == "help"]) return message.reply(`Usage: ${prefix}prefix <desired prefix here>`)
+  let prefixes = JSON.parse(fs.readFileSync("./prefixes.json", "utf8"))
   
   prefixes [message.guild.id] = {
   prefixes: args.slice(0).join(" ")
