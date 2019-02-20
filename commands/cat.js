@@ -3,12 +3,12 @@ const superagent = require("superagent")
 
 module.exports.run = async (client, message, args) => {
   let {body} = await superagent
-  .get(`https://random.dog/woof.json`);
+  .get(`https://random.cat/meaow`);
   
   let embed = new RichEmbed()
   .setColor("#ff9900")
-  .setTitle("Dog")
-  .setImage(body.url);
+  .setTitle("Cat")
+  .setImage(body.file);
   message.channel.send(embed);
 }
 
