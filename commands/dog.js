@@ -7,7 +7,7 @@ module.exports.run = async (client, message, args) => {
   
   let embed = new RichEmbed()
   .setColor("#ff9900")
-  .setTitle("Dog")
+  .setTitle(":dog:")
   .setImage(body.url);
   message.channel.send(embed);
 }
