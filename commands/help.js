@@ -2,7 +2,7 @@ const {RichEmbed} = require("discord.js")
 
 module.exports.run = async (client, message, args) => {
     const embed = new RichEmbed()
-    .setColor(0x7289DA)
+    .setColor("#7289DA")
     .setTitle(`Help Menu`)
     .addField(`Information Commands`, "`help` `about` `ping` `weather`")
     .addField(`Moderation Commands`,"`addrole` `ban` `kick` `prune` `removerole` `setprefix` `say` `tempmute`")

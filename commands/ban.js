@@ -11,7 +11,7 @@ module.exports.run = async (client, message, args) => {
   
   let embed = new RichEmbed()
   .setDescription("Ban")
-  .setColor("#e56b00")
+  .setColor("#7289DA")
   .addField("Banned User", `${bUser} with ID ${bUser.id}`)
   .addField("Banned By", `<@${message.author.id}> with ID ${message.author.id}`)
   .addField("Banned in", message.channel)

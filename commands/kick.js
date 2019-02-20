@@ -10,7 +10,7 @@ module.exports.run = async (client, message, args) => {
   
   let embed = new RichEmbed()
   .setDescription("Kick")
-  .setColor("#e56b00")
+  .setColor("#7289DA")
   .addField("Kicked User", `${kUser} with ID ${kUser.id}`)
   .addField("Kicked By", `<@${message.author.id}> with ID ${message.author.id}`)
   .addField("Kicked in", message.channel)

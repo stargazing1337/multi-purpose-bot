@@ -6,7 +6,7 @@ module.exports.run = async (client, message, args) => {
   .get(`http://aws.random.cat/meow`);
   
   let embed = new RichEmbed()
-  .setColor("#ff9900")
+  .setColor("#7289DA")
   .setTitle(":cat:")
   .setImage(body.file);
   message.channel.send(embed);

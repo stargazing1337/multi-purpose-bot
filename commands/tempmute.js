@@ -10,7 +10,7 @@ module.exports.run = async (client, message, args) => {
   if(!muterole){
     try{
       muterole = await message.guild.createRole({
-        name: "muted",
+        name: "Muted",
         color: "#000000",
         permissions:[]
       })

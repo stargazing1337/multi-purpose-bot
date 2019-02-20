@@ -6,7 +6,7 @@ module.exports.run = async (client, message, args) => {
   .get(`https://random.dog/woof.json`);
   
   let embed = new RichEmbed()
-  .setColor("#ff9900")
+  .setColor("#7289DA")
   .setTitle(":dog:")
   .setImage(body.url);
   message.channel.send(embed);

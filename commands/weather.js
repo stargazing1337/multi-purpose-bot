@@ -20,7 +20,7 @@ weather.find({search: args.join(" "), degreeType: 'F'}, function(err, result) { 
                 .setDescription(`**${current.skytext}**`) // This is the text of what the sky looks like, remember you can find all of this on the weather-js npm page.
                 .setAuthor(`Weather for ${current.observationpoint}`) // This shows the current location of the weather.
                 .setThumbnail(current.imageUrl) // This sets the thumbnail of the embed
-                .setColor(0x00AE86) // This sets the color of the embed, you can set this to anything if you look put a hex color picker, just make sure you put 0x infront of the hex
+                .setColor("#7289DA") // This sets the color of the embed, you can set this to anything if you look put a hex color picker, just make sure you put 0x infront of the hex
                 .addField('Timezone',`UTC${location.timezone}`, true) // This is the first field, it shows the timezone, and the true means `inline`, you can read more about this on the official discord.js documentation
                 .addField('Degree Type',location.degreetype, true)// This is the field that shows the degree type, and is inline
                 .addField('Temperature',`${current.temperature} Degrees`, true)

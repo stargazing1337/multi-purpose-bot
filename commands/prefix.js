@@ -15,7 +15,7 @@ module.exports.run = async (client, message, args, cmd, prefix) => {
   });
   
   let embed = new RichEmbed()
-  .setColor("FF9900")
+  .setColor("#7289DA")
   .setTitle("Prefix Set!")
   .setDescription(`Set to ${args[0]}`)
   message.channel.send(embed);

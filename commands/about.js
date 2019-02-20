@@ -10,7 +10,7 @@ module.exports.run = async (client, message, args, prefix) => {
   let uptime = `${hours} hrs ${minutes} mins ${seconds} secs`;
   
   const embed = new  RichEmbed()
-  .setColor(0x7289DA)
+  .setColor("#7289DA")
   .addField(`Version`, `1.0`, true)
   .addField(`Node JS`, `8.x`, true)
   .addField(`Library`, `[discord.js](https://discord.js.org/#/)`, true)
