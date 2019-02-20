@@ -11,9 +11,9 @@ fs.readdir("./commands/", (err, files) => {
     console.log("Couldn't find commands.");
     return
   }
-  jsfile.forEach((f, i) =>{
-    let props = require (`./commands/${f}`);
-    console.log(`${f} loaded!`)
+  jsfile.forEach((command, i) =>{
+    let props = require(`./commands/${command}`);
+    console.log(`${command} loaded!`)
     client.commands.set(props.help.name, props)
   })
 })
@@ -23,9 +23,8 @@ client.on('ready',() => { // When bot is ready
   client.user.setActivity(`people type !help`, {type: "WATCHING"});
 });
 
-client.on('message', (message) => { // When message is recieved
-  if(message.author.bot) return // If the author is a bot exit code
-  //if (!message.content.startsWith(prefix)) return; // If the message doesnt start with the prefix exit code
+client.on('message', (message) => {
+  if(message.author.bot) return
   let prefixes = JSON.parse(fs.readFileSync("./prefixes.json", "utf8"));
   if (!prefixes[message.guild.id]){
    prefixes[message.guild.id] = { 
@@ -41,5 +40,5 @@ client.on('message', (message) => { // When message is recieved
   if(commandfile) commandfile.run(client,message,args);
 };
     console.log(cmd.slice(0,1));
-})
+});
 client.login(process.env.TOKEN); // Never show your token bruh
