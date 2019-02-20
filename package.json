@@ -14,7 +14,8 @@
     "discord.js": "^11.4.2",
     "ms": "^2.1.1",
     "moment": "^2.24.0",
-    "weather-js": "^2.0.0"
+    "weather-js": "^2.0.0",
+    "superagent": "^4.0.0"
   },
   "engines": {
     "node": "8.x"
