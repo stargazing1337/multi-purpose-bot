@@ -7,7 +7,6 @@ exports.run = (client, message, args) => {
 
     var subreddits = [
         'NSFW_Wallpapers',
-        'SexyWallpapers',
         'HighResNSFW',
         'nsfw_hd',
         'UHDnsfw'
