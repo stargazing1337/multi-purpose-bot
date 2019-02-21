@@ -18,33 +18,35 @@ client.commands = new Discord.Collection();
  // })
 //})
 
-client.aliases = new Discord.Collection();
-fs.readdir('./commands/', (err, files) => {
-  if (err) console.error(err);
+//client.aliases = new Discord.Collection();
+//fs.readdir('./commands/', (err, files) => {
+ // if (err) console.error(err);
+ // console.log(`Loading a total of ${files.length} commands.`);
+ // files.forEach(f => {
+ //   let props = require(`./commands/${f}`);
+ //   console.log(`Loading Command: ${props.help.name} ✔`);
+ //   client.commands.set(props.help.name, props);
+ //   props.conf.aliases.forEach(alias => {
+ //     client.aliases.set(alias, props.help.name);
+ //   });
+ // });
+//});
+
+fs.readdir("./commands/", (err, files) => {
+  if (err) return console.error(err);
   console.log(`Loading a total of ${files.length} commands.`);
-  files.forEach(f => {
-    let props = require(`./commands/${f}`);
-    console.log(`Loading Command: ${props.help.name}. ✔`);
-    client.commands.set(props.help.name, props);
-//    props.conf.aliases.forEach(alias => {
-    //  client.aliases.set(alias, props.help.name);
-  //  });
+  files.forEach(file => {
+    if (!file.endsWith(".js")) return;
+    // Load the command file itself
+
+    let props = require(`./commands/${file}`);
+    // Get just the command name from the file name
+    let commandName = file.split(".")[0];
+    console.log(`Loading Command: ${props.help.name} ✔`);
+    // Here we simply store the whole thing in the command Enmap. We're not running it right now.
+    client.commands.set(commandName, props);
   });
 });
-
-//fs.readdir("./commands/", (err, files) => {
-//  if (err) return console.error(err);
-//  files.forEach(file => {
-//    if (!file.endsWith(".js")) return;
-    // Load the command file itself
- //   let props = require(`./commands/${file}`);
-    // Get just the command name from the file name
- //   let commandName = file.split(".")[0];
-//    console.log(`${commandName} loaded!`);
-    // Here we simply store the whole thing in the command Enmap. We're not running it right now.
-//    client.commands.set(commandName, props);
-//  });
-//});
 
 client.on('ready',() => { // When bot is ready
   console.log('Bot is ready with username: ' + client.user.username) // Log when bot is ready
