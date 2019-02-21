@@ -37,6 +37,16 @@ client.on('ready',() => { // When bot is ready
   client.user.setActivity(`people type !help`, {type: "WATCHING"});
 });
 
+module.exports.command = {
+     name: 'command name',
+    aliases: ["command aliases"/*Multiple works too*/],
+    permission: "command permission",
+    description: "command description",
+    usage: "command usage",
+    category: "command category",
+    enabled: true // this is will make command enable or disable if its false it is disabled 
+};
+
 client.on('message', (message) => {
   if(message.author.bot) return
   let prefixes = JSON.parse(fs.readFileSync("./prefixes.json", "utf8"));

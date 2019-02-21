@@ -35,3 +35,7 @@ module.exports.run = async (client, message, args) => {
   message.channel.send(embed);
 }
 
+module.export.command = {
+  name: '8ball',
+  aliases: ['8b']
+};
