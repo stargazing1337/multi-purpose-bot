@@ -32,25 +32,18 @@ client.commands = new Discord.Collection();
  // });
 //});
 
-
-
 fs.readdir("./commands/", (err, files) => {
   if (err) return console.error(err);
   console.log(`Loading a total of ${files.length} commands.`);
   files.forEach(file => {
     if (!file.endsWith(".js")) return;
-    // Load the command file itself
-
     let props = require(`./commands/${file}`);
-    // Get just the command name from the file name
-    let commandName = file.split(".")[0];
     console.log(`Loading Command: ${props.help.name} ✔`);
-    // Here we simply store the whole thing in the command Enmap. We're not running it right now.
-    client.commands.set(commandName, props);
+    client.commands.set(props.help.name, props);
         props.conf.aliases.forEach(alias => {
-      client.aliases.set(alias, props.help.name)
-        })
-  })
+      client.aliases.set(alias, props.help.name);
+    });
+  });
 });
 
 exports.conf = {
