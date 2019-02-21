@@ -4,20 +4,27 @@ const client = new Discord.Client();
 const fs = require("fs");
 client.commands = new Discord.Collection();
 
-fs.readdir("./commands/", (err, files) => {
+const loadCommands = module.exports.loadCommands = (dir = "./commands/") => {
+fs.readdir(dir, (err, files) => {
   if(err) console.log(err);
+  
+          files.forEach((file) => {                       // reading Files from each dir
+            if (fs.lstatSync(dir + file).isDirectory()) {
+                loadCommands(dir + file + "/");
+                return;
+}
   let jsfile = files.filter(f => f.split(".").pop() === "js")
   if(jsfile.length <= 0){
     console.log("Couldn't find commands.");
     return
-  }
+  
   jsfile.forEach((command, i) =>{
     let props = require(`./commands/${command}`);
     console.log(`${command} loaded!`)
     client.commands.set(props.help.name, props)
   })
-})
-
+}}
+}
 client.on('ready',() => { // When bot is ready
   console.log('Bot is ready with username: ' + client.user.username) // Log when bot is ready
   client.user.setActivity(`people type !help`, {type: "WATCHING"});
