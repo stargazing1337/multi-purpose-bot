@@ -33,9 +33,5 @@ module.exports.run = async (client, message, args) => {
   .addField("Question", question)
   .addField("Answer", replies[result]);
   message.channel.send(embed);
-  
 }
 
-module.exports.help = {
-  name: "8ball"
-}

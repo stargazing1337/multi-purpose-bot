@@ -5,19 +5,33 @@ const fs = require("fs");
 client.commands = new Discord.Collection();
 
 
+//fs.readdir("./commands/", (err, files) => {
+ // if(err) console.log(err);
+ // let jsfile = files.filter(f => f.split(".")[0]);
+ // if(jsfile.length <= 0){
+ //   console.log("Couldn't find commands.");
+ //   return
+ // }
+ // jsfile.forEach((command, i) =>{
+  //  let props = require(`./commands/${command}`);
+  //  console.log(`${command} loaded!`)
+  //  client.commands.set(props.help.name, props)
+ // })
+//})
+
 fs.readdir("./commands/", (err, files) => {
-  if(err) console.log(err);
-  let jsfile = files.filter(f => f.split(".")[0]);
-  if(jsfile.length <= 0){
-    console.log("Couldn't find commands.");
-    return
-  }
-  jsfile.forEach((command, i) =>{
-    let props = require(`./commands/${command}`);
-    console.log(`${command} loaded!`)
-    client.commands.set(props.help.name, props)
-  })
-})
+  if (err) return console.error(err);
+  files.forEach(file => {
+    if (!file.endsWith(".js")) return;
+    // Load the command file itself
+    let props = require(`./commands/${file}`);
+    // Get just the command name from the file name
+    let commandName = file.split(".")[0];
+    console.log(`${commandName} loaded!`);
+    // Here we simply store the whole thing in the command Enmap. We're not running it right now.
+    client.commands.set(commandName, props);
+  });
+});
 
 client.on('ready',() => { // When bot is ready
   console.log('Bot is ready with username: ' + client.user.username) // Log when bot is ready
