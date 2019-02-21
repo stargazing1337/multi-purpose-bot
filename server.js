@@ -29,6 +29,9 @@ fs.readdir("./commands/", (err, files) => {
     console.log(`${commandName} loaded!`);
     // Here we simply store the whole thing in the command Enmap. We're not running it right now.
     client.commands.set(commandName, props);
+    props.config.aliases.forEach(alias => {
+      client.aliases.set(alias, props.config.name)
+    });
   });
 });
 
@@ -36,16 +39,6 @@ client.on('ready',() => { // When bot is ready
   console.log('Bot is ready with username: ' + client.user.username) // Log when bot is ready
   client.user.setActivity(`people type !help`, {type: "WATCHING"});
 });
-
-module.exports.command = {
-     name: 'command name',
-    aliases: ["command aliases"/*Multiple works too*/],
-    permission: "command permission",
-    description: "command description",
-    usage: "command usage",
-    category: "command category",
-    enabled: true // this is will make command enable or disable if its false it is disabled 
-};
 
 client.on('message', (message) => {
   if(message.author.bot) return
