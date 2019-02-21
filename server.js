@@ -29,9 +29,6 @@ fs.readdir("./commands/", (err, files) => {
     console.log(`${commandName} loaded!`);
     // Here we simply store the whole thing in the command Enmap. We're not running it right now.
     client.commands.set(commandName, props);
-    props.config.aliases.forEach(alias => {
-      client.aliases.set(alias, props.config.name)
-    });
   });
 });
 

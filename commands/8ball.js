@@ -34,8 +34,3 @@ module.exports.run = async (client, message, args) => {
   .addField("Answer", replies[result]);
   message.channel.send(embed);
 }
-
-module.exports.config = {
-  name: '8ball',
-  aliases: ['8b']
-};
