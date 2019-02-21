@@ -4,7 +4,6 @@ const client = new Discord.Client();
 const fs = require("fs");
 client.commands = new Discord.Collection();
 
-
 //fs.readdir("./commands/", (err, files) => {
  // if(err) console.log(err);
  // let jsfile = files.filter(f => f.split(".")[0]);
