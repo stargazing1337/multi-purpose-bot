@@ -25,6 +25,15 @@ module.exports.run = async (client, message, args, con) => {
 	}
 }
 
-module.exports.help = {
-	name: "prune"
-}
+exports.conf = {
+    enabled: true,
+    guildOnly: false,
+    aliases: ['8'],
+    permLevel: 0
+  };
+  
+  exports.help = {
+    name: 'prune',
+    description: 'Gives you a random response to a question.',
+    usage: '8ball [question]'
+};

@@ -8,6 +8,15 @@ module.exports.run = async (client, message, args) => {
     message.channel.send(embed)    
 }
 
-module.exports.help = {
-  name: "ping"
-}
+exports.conf = {
+    enabled: true,
+    guildOnly: false,
+    aliases: ['8'],
+    permLevel: 0
+  };
+  
+  exports.help = {
+    name: 'ping',
+    description: 'Gives you a random response to a question.',
+    usage: '8ball [question]'
+};

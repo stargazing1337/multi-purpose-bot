@@ -35,6 +35,15 @@ module.exports.run = async (client, message, args) => {
   }, ms(mutetime));
 }
 
-module.exports.help = {
-  name: "tempmute"
-}
+exports.conf = {
+    enabled: true,
+    guildOnly: false,
+    aliases: ['8'],
+    permLevel: 0
+  };
+  
+  exports.help = {
+    name: 'tempmute',
+    description: 'Gives you a random response to a question.',
+    usage: '8ball [question]'
+};

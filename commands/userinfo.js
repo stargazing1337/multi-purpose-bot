@@ -20,6 +20,15 @@ module.exports.run = (client, message, args) => {
 	message.channel.send(embed);
 }
 
-module.exports.help = {
-	name: "userinfo"
-}
+exports.conf = {
+    enabled: true,
+    guildOnly: false,
+    aliases: ['8'],
+    permLevel: 0
+  };
+  
+  exports.help = {
+    name: 'userinfo',
+    description: 'Gives you a random response to a question.',
+    usage: '8ball [question]'
+};

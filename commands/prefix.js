@@ -21,6 +21,15 @@ module.exports.run = async (client, message, args, cmd, prefix) => {
   message.channel.send(embed);
 }
 
-module.exports.help = {
-  name: "prefix"
-}
+exports.conf = {
+    enabled: true,
+    guildOnly: false,
+    aliases: ['8'],
+    permLevel: 0
+  };
+  
+  exports.help = {
+    name: 'prefix',
+    description: 'Gives you a random response to a question.',
+    usage: '8ball [question]'
+};

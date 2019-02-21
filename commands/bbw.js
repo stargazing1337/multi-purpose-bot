@@ -22,6 +22,15 @@ exports.run = (client, message, args) => {
         })
 }
 
-module.exports.help = {
-  name: "bbw"
-}
+exports.conf = {
+    enabled: true,
+    guildOnly: false,
+    aliases: ['8'],
+    permLevel: 0
+  };
+  
+  exports.help = {
+    name: 'bbw',
+    description: 'Gives you a random response to a question.',
+    usage: '8ball [question]'
+};
