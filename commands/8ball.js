@@ -36,10 +36,10 @@ module.exports.run = async (client, message, args) => {
 }
 
 exports.conf = {
-    enabled: true,
-    guildOnly: false,
+   // enabled: true,
+   // guildOnly: false,
     aliases: ['8'],
-    permLevel: 0
+   // permLevel: 0
   };
   
   exports.help = {
