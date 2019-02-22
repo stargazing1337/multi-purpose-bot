@@ -17,7 +17,6 @@ fs.readdir("./commands/", (err, files) => {
       client.aliases.set(alias, props.help.name);
       console.log(`${alias}`)
     });
-
   });  
 });
 
