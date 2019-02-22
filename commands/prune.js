@@ -1,4 +1,4 @@
-module.exports.run = async (client, message, args, con) => {
+exports.run = async (client, message, args, con) => {
 	//if(!client.hasPermission(message, "MANAGE_MESSAGES")) return message.channel.send("You do not have permission to do this.");
 	let mention = message.mentions.users.first();
 	let amount;

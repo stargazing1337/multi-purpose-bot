@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 const fs = require("fs");
 let config = require("../botconfig.json");
 
-module.exports.noPerms = (message, perm) => {
+exports.noPerms = (message, perm) => {
     let embed = new Discord.RichEmbed()
         .setAuthor(message.author.username)
         .setTitle("Insufficient Permission")
@@ -12,7 +12,7 @@ module.exports.noPerms = (message, perm) => {
     message.channel.send(embed).then(m => m.delete(5000));
 }
 
-module.exports.equalPerms = (message, user, perms) => {
+exports.equalPerms = (message, user, perms) => {
 
     let embed = new Discord.RichEmbed()
         .setAuthor(message.author.username)
@@ -24,7 +24,7 @@ module.exports.equalPerms = (message, user, perms) => {
 
 }
 
-module.exports.botuser = (message) => {
+exports.botuser = (message) => {
     let embed = new Discord.RichEmbed()
         .setTitle("Error")
         .setDescription("You cannot ban a bot.")
@@ -33,7 +33,7 @@ module.exports.botuser = (message) => {
     message.channel.send(embed).then(m => m.delete(5000));
 }
 
-module.exports.cantfindUser = (channel) => {
+exports.cantfindUser = (channel) => {
     let embed = new Discord.RichEmbed()
         .setTitle("Error")
         .setDescription("Could not find that user.")
@@ -42,7 +42,7 @@ module.exports.cantfindUser = (channel) => {
     channel.send(embed).then(m => m.delete(5000));
 }
 
-module.exports.noReason = (channel) => {
+exports.noReason = (channel) => {
     let embed = new Discord.RichEmbed()
         .setTitle("Error")
         .setDescription("Please supply a reason.")

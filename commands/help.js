@@ -1,6 +1,6 @@
 const {RichEmbed} = require("discord.js")
 
-module.exports.run = async (client, message, args) => {
+exports.run = async (client, message, args) => {
     const embed = new RichEmbed()
     .setColor("#7289DA")
     .setTitle(`Help Menu`)

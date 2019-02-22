@@ -1,7 +1,6 @@
 const {RichEmbed} = require("discord.js")
 
 exports.run = async (client, message, args) => {
-  
   if(!args[2]) return message.reply("Usage: !8ball <question>");
   let replies = ["It is certain.",
                  "It is decidedly so.",

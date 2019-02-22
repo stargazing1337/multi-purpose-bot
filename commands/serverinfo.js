@@ -1,6 +1,6 @@
 const {RichEmbed} = require("discord.js")
 
-module.exports.run = async (client, message, args) => {
+exports.run = async (client, message, args) => {
     let sicon = message.guild.iconURL;
     let serverembed = new RichEmbed()
     .setDescription("Server Information")

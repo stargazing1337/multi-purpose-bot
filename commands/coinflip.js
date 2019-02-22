@@ -1,6 +1,6 @@
 const {RichEmbed} = require("discord.js")
 
-module.exports.run = async (client, message, args) => {
+exports.run = async (client, message, args) => {
   //if(!args[0]) return message.reply("Usage: !8ball <question>");
   let replies = ["Heads", "Tails"];
 

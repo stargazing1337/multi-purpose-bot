@@ -1,7 +1,7 @@
 const {RichEmbed} = require("discord.js")
 const errors = require("../utils/errors.js");
 
-module.exports.run = async (client, message, args) => {
+exports.run = async (client, message, args) => {
   
   let bUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]))
   if(!bUser) return message.channel.send("Can't find user!");

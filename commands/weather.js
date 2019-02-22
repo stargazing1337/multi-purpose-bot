@@ -1,7 +1,7 @@
 const {RichEmbed} = require("discord.js")
 const weather = require("weather-js");
 
-module.exports.run = async (client, message, args) => {
+exports.run = async (client, message, args) => {
 weather.find({search: args.join(" "), degreeType: 'F'}, function(err, result) {
             if (err) message.channel.send(err);
             if (!args[0] || args[0] == "help") {

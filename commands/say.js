@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 const errors = require("../utils/errors.js");
 
-module.exports.run = async (client, message, args) => {
+exports.run = async (client, message, args) => {
 
   if(!args [0] || args[0] == "help"){
    message.reply("Usage: !say <#channel> <word or sentence>");
