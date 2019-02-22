@@ -5,34 +5,6 @@ const fs = require("fs");
 client.commands = new Discord.Collection();
 client.aliases = new Discord.Collection();
 
-//fs.readdir("./commands/", (err, files) => {
- // if(err) console.log(err);
- // let jsfile = files.filter(f => f.split(".")[0]);
- // if(jsfile.length <= 0){
- //   console.log("Couldn't find commands.");
- //   return
- // }
- // jsfile.forEach((command, i) =>{
-  //  let props = require(`./commands/${command}`);
-  //  console.log(`${command} loaded!`)
-  //  client.commands.set(props.help.name, props)
- // })
-//})
-
-//
-//fs.readdir('./commands/', (err, files) => {
- // if (err) console.error(err);
- // console.log(`Loading a total of ${files.length} commands.`);
- // files.forEach(file => {
- //  let props = require(`./commands/${file}`);
- //   console.log(`Loading Command: ${props.help.name} ✔`);
- //   client.commands.set(props.help.name, props);
- //   props.conf.aliases.forEach(alias => {
-  //    client.aliases.set(alias, props.help.name);
- //   });
- // });
-//});
-
 fs.readdir("./commands/", (err, files) => {
   if (err) return console.error(err);
   console.log(`Loading a total of ${files.length} commands.`);
@@ -48,19 +20,6 @@ fs.readdir("./commands/", (err, files) => {
 
   });  
 });
-
-exports.conf = {
-    enabled: true,
-    guildOnly: false,
-    aliases: ['stff', 'alsostuff'],
-    permLevel: 0
-  };
-  
-  exports.help = {
-    name: '4k',
-    description: 'Gives you a random response to a question.',
-    usage: '8ball [question]'
-};
 
 client.on('ready',() => { // When bot is ready
   console.log(client.user.username + `: Ready to serve ${client.users.size} users in ${client.channels.size} channels of ${client.guilds.size} servers.`);
