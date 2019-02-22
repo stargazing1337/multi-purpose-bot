@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 const fs = require("fs");
-let config = require("../botconfig.json");
+let config = require("../config.json");
 
 exports.noPerms = (message, perm) => {
     let embed = new Discord.RichEmbed()
@@ -21,7 +21,6 @@ exports.equalPerms = (message, user, perms) => {
         .addField(`${user} has perms`, perms);
 
     message.channel.send(embed).then(m => m.delete(5000));
-
 }
 
 exports.botuser = (message) => {
