@@ -30,11 +30,10 @@ exports.conf = {
     enabled: true,
     guildOnly: false,
     aliases: ['a'],
-    permLevel: 0
   };
   
   exports.help = {
     name: 'about',
-    description: 'Gives you a random response to a question.',
-    usage: '8ball [question]'
+    description: 'Displays the about section.',
+    usage: 'about'
 };

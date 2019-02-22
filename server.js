@@ -40,6 +40,7 @@ fs.readdir("./commands/", (err, files) => {
     if (!file.endsWith(".js")) return;
     let props = require(`./commands/${file}`);
     console.log(`Loading Command: ${props.help.name} ✔`);
+    console.log(`${props.conf.aliases}`)
     client.commands.set(props.help.name, props);
         props.conf.aliases.forEach(alias => {
       client.aliases.set(alias, props.help.name);
@@ -61,8 +62,7 @@ exports.conf = {
 };
 
 client.on('ready',() => { // When bot is ready
-  console.log('Bot is ready with username: ' + client.user.username) // Log when bot is ready
-  console.log(`GuideBot: Ready to serve ${client.users.size} users, in ${client.channels.size} channels of ${client.guilds.size} servers.`);
+  console.log(client.user.username + `: Ready to serve ${client.users.size} users in ${client.channels.size} channels of ${client.guilds.size} servers.`);
   client.user.setActivity(`people type !help`, {type: "WATCHING"});
 });
 

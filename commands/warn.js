@@ -14,12 +14,12 @@ module.exports.run = async (client, message, args, con) => {
 exports.conf = {
     enabled: true,
     guildOnly: false,
-    aliases: ['8'],
+    aliases: ['w'],
     permLevel: 0
   };
   
   exports.help = {
-    name: 'w',
+    name: 'warn',
     description: 'Gives you a random response to a question.',
     usage: '8ball [question]'
 };
