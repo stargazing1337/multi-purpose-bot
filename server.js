@@ -3,6 +3,7 @@ const Discord = require('discord.js')
 const client = new Discord.Client();
 const fs = require("fs");
 client.commands = new Discord.Collection();
+client.aliases = new Discord.Collection();
 
 //fs.readdir("./commands/", (err, files) => {
  // if(err) console.log(err);
@@ -18,7 +19,7 @@ client.commands = new Discord.Collection();
  // })
 //})
 
-//client.aliases = new Discord.Collection();
+//
 //fs.readdir('./commands/', (err, files) => {
  // if (err) console.error(err);
  // console.log(`Loading a total of ${files.length} commands.`);

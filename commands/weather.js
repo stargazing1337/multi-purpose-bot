@@ -29,7 +29,7 @@ weather.find({search: args.join(" "), degreeType: 'F'}, function(err, result) {
 exports.conf = {
     enabled: true,
     guildOnly: false,
-    aliases: ['8'],
+    aliases: ['weath'],
     permLevel: 0
   };
   

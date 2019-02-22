@@ -16,7 +16,7 @@ module.exports.run = async (client, message, args) => {
 exports.conf = {
     enabled: true,
     guildOnly: false,
-    aliases: ['8'],
+    aliases: ['coin'],
     permLevel: 0
   };
   

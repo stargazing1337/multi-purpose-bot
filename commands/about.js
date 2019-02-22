@@ -29,7 +29,7 @@ module.exports.run = async (client, message, args, prefix) => {
 exports.conf = {
     enabled: true,
     guildOnly: false,
-    aliases: ['8'],
+    aliases: ['a'],
     permLevel: 0
   };
   

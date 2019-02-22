@@ -19,7 +19,7 @@ exports.conf = {
   };
   
   exports.help = {
-    name: 'warn',
+    name: 'w',
     description: 'Gives you a random response to a question.',
     usage: '8ball [question]'
 };
