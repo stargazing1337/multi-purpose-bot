@@ -40,12 +40,13 @@ fs.readdir("./commands/", (err, files) => {
     if (!file.endsWith(".js")) return;
     let props = require(`./commands/${file}`);
     console.log(`Loading Command: ${props.help.name} ✔`);
-    console.log(`${props.conf.aliases}`)
     client.commands.set(props.help.name, props);
         props.conf.aliases.forEach(alias => {
       client.aliases.set(alias, props.help.name);
+      console.log(`${alias}`)
     });
-  });
+
+  });  
 });
 
 exports.conf = {
