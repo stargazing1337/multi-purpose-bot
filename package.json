@@ -5,9 +5,9 @@
   "name": "Modbot",
   "version": "0.0.1",
   "description": "Easily expandable, customizable and fully featured Discord moderation bot.",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node index.js"
   },
   "dependencies": {
     "express": "^4.16.4",
