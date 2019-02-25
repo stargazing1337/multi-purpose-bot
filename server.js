@@ -38,9 +38,8 @@ client.on('message', (message) => {
   let args = messageArray.slice(1);
   let prefix = prefixes[message.guild.id].prefixes;
   if(message.content.startsWith(prefix)){
-  let commandfile = client.commands.get(cmd.slice(prefix.length).toLowerCase()) || client.commands.get(client.aliases.get(cmd.slice(prefix.length.toLowerCase())));
+  let commandfile = client.commands.get(cmd.slice(prefix.length).toLowerCase()) || client.commands.get(client.aliases.get(cmd.slice(prefix.length).toLowerCase()));
   if(commandfile) commandfile.run(client,message,args);
 };
-    console.log(cmd.slice(0,1));
 });
 client.login(process.env.TOKEN); // Never show your token
