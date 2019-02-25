@@ -9,7 +9,8 @@ fs.readdir("./commands/", (err, files) => {
   if (err) return console.error(err);
   console.log(`Loading a total of ${files.length} commands.`);
   files.forEach(file => {
-        console.log(`${fs.lstatSync(`./commands/${file}`).isDirectory()}`)
+    //console.log(`${fs.lstatSync(`./commands/${file}`).isDirectory()}`)
+    console.log(`${file}`)
     if (!file.endsWith(".js")) return;
     let props = require(`./commands/${file}`);
     //console.log(`Loading Command: ${props.help.name} ✔`);
