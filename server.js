@@ -17,8 +17,7 @@ fs.readdir("./commands/", (err, files) => {
       client.aliases.set(alias, props.help.name);
       console.log(`${alias}`)
     });
-    console.log(`${props.conf.enabled}`)
-    if props.conf.enabled = false{}
+    console.log(`${props.help.description}`)
   });  
 });
 
