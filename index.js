@@ -8,13 +8,16 @@ client.aliases = new Discord.Collection();
 fs.readdir("./commands/", (err, files) => {
   if (err) return console.error(err);
   console.log(`Loading a total of ${files.length} commands.`);
+
   files.forEach(file => {
-    //console.log(`${fs.lstatSync(`./commands/${file}`).isDirectory()}`)
+    console.log(`${fs.lstatSync(`./commands/${file}`).isDirectory()}`)  
     console.log(`${file}`)
+    if (fs.lstatSync(`./commands/${file}`).isDirectory()) {
+    console.log(`./commands/${file}/`)
+    }
     if (!file.endsWith(".js")) return;
     let props = require(`./commands/${file}`);
-    //console.log(`Loading Command: ${props.help.name} ✔`);
-
+    console.log(`Loading Command: ${props.help.name} ✔`);
     client.commands.set(props.help.name, props);
         props.conf.aliases.forEach(alias => {
       client.aliases.set(alias, props.help.name);
