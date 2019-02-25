@@ -1,0 +1,20 @@
+const randomPuppy = require('random-puppy');
+const request = require('snekfetch');
+const fs = require("fs")
+
+exports.run = (client, message, args) => {
+  //insert code here
+}
+
+exports.conf = {
+    enabled: true,
+    guildOnly: false,
+    aliases: ['t'],
+    permLevel: 0
+  };
+  
+  exports.help = {
+    name: 'template',
+    description: 'Template for commands.',
+    usage: '!template'
+};
