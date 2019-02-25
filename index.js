@@ -31,7 +31,7 @@ client.on('message', (message) => {
    prefixes[message.guild.id] = { 
      prefixes: process.env.PREFIX
    };
-  }
+  };
   let messageArray = message.content.split(" ");
   let cmd = messageArray[0]
   let args = messageArray.slice(1);
