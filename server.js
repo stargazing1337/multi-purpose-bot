@@ -23,7 +23,7 @@ fs.readdir("./commands/", (err, files) => {
 
 client.on('ready',() => { // When bot is ready
   console.log(client.user.username + `: Ready to serve ${client.users.size} users in ${client.channels.size} channels of ${client.guilds.size} servers.`);
-  client.user.setActivity(`people type !help`, {type: "WATCHING"});
+  client.user.setActivity(`users type !help`, {type: "WATCHING"});
 });
 
 client.on('message', (message) => {
