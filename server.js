@@ -5,17 +5,6 @@ const fs = require("fs");
 client.commands = new Discord.Collection();
 client.aliases = new Discord.Collection();
 
-const loadCommands = module.exports.loadCommands = (dir = "./commands/") => {
-    fs.readdir(dir, (error, files) => {                   // Reading the Dir
-        if (error) return console.log(error);                    
-
-        files.forEach((file) => {                       // reading Files from each dir
-            if (fs.lstatSync(dir + file).isDirectory()) {
-                loadCommands(dir + file + "/");
-                console.log(`${file}`)
-                return;
-}})})}
-
 fs.readdir("./commands/", (err, files) => {
   if (err) return console.error(err);
   console.log(`Loading a total of ${files.length} commands.`);
@@ -26,10 +15,8 @@ fs.readdir("./commands/", (err, files) => {
     client.commands.set(props.help.name, props);
         props.conf.aliases.forEach(alias => {
       client.aliases.set(alias, props.help.name);
-      console.log(`${alias}`)
     });
-    console.log(`${props.help.description}`)
-  });  
+  });
 });
 
 client.on('ready',() => { // When bot is ready
