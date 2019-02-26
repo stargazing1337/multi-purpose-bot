@@ -1,5 +1,7 @@
+const errors = require("../utils/errors.js");
+
 exports.run = async (client, message, args, con) => {
-	//if(!client.hasPermission(message, "MANAGE_MESSAGES")) return message.channel.send("You do not have permission to do this.");
+  if (!message.member.hasPermission("BAN_MEMBERS")) return errors.noPerms(message, "BAN_MEMBERS");
 	let mention = message.mentions.users.first();
 	let amount;
 	if(mention) {
