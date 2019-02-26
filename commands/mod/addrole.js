@@ -1,5 +1,5 @@
 const Discord = require("discord.js");
-const errors = require("../utils/errors.js");
+const errors = require(".../utils/errors.js");
 
 exports.run = async (client, message, args) => {
   if (!message.member.hasPermission("MANAGE_ROLES")) return errors.noPerms(message, "MANAGE_ROLES");
