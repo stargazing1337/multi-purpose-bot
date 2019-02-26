@@ -1,4 +1,6 @@
 const randomPuppy = require('random-puppy');
+const request = require('snekfetch');
+const fs = require("fs")
 
 exports.run = (client, message, args) => {
   //insert code here
@@ -12,7 +14,7 @@ exports.conf = {
   };
   
   exports.help = {
-    name: 'template',
+    name: 'unmute',
     description: 'Template for commands.',
     usage: '!template'
 };
