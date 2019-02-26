@@ -1,4 +1,4 @@
-const errors = require("../utils/errors.js");
+const errors = require("../../utils/errors.js");
 
 exports.run = async (client, message, args, con) => {
   if (!message.member.hasPermission("BAN_MEMBERS")) return errors.noPerms(message, "BAN_MEMBERS");
