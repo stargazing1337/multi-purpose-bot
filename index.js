@@ -20,22 +20,22 @@ if (!file.endsWith(".js")) return;
   });
 });
 
-//function walk(dir, callback) {
-//    fs.readdir(dir, function(err, files) {
-//        if (err) throw err;
-//        files.forEach(function(file) {
-//            var filepath = path.join(dir, file);
-//            fs.stat(filepath, function(err,stats) {
-//                if (stats.isDirectory()) {
-//                    walk(filepath, callback);
-//                } else if (stats.isFile() && file.endsWith('.js')) {
-//                    console.log("This is .js file")
-//                }
-//            });
-//        });
-//    });
-//}
-//walk();
+function walk(dir, callback) {
+    fs.readdir(dir, function(err, files) {
+        if (err) throw err;
+        files.forEach(function(file) {
+            var filepath = path.join(dir, file);
+            fs.stat(filepath, function(err,stats) {
+                if (stats.isDirectory()) {
+                    walk(filepath, callback);
+                } else if (stats.isFile() && file.endsWith('.js')) {
+                    console.log("This is .js file")
+                }
+            });
+        });
+    });
+}
+walk(`./commands/`)
 
 client.on('ready',() => { // When bot is ready
   console.log(client.user.username + `: Ready to serve ${client.users.size} users in ${client.channels.size} channels of ${client.guilds.size} servers.`);
