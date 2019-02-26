@@ -14,7 +14,7 @@ exports.conf = {
   };
   
   exports.help = {
-    name: 'template',
+    name: 'doo',
     description: 'Template for commands.',
     usage: '!template'
 };
