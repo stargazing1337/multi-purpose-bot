@@ -3,7 +3,7 @@ const Discord = require('discord.js')
 const client = new Discord.Client();
 const fs = require("fs");
 const path = require("path");
-var dir = "./commands/");
+var dir =  "./commands/";
 client.commands = new Discord.Collection();
 client.aliases = new Discord.Collection();
 
@@ -31,12 +31,7 @@ function walk(dir, callback) {
                 if (stats.isDirectory()) {
                     walk(filepath, callback);
                 } else if (stats.isFile() && file.endsWith('.js')) {
-                        let props = require(`./commands/${file}`);
-    console.log(`Loading Command: ${props.help.name} ✔`);
-    client.commands.set(props.help.name, props);
-        props.conf.aliases.forEach(alias => {
-     client.aliases.set(alias, props.help.name);
-    });
+                  console.log("true")
                 }
             });
         });
