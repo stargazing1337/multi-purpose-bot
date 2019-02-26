@@ -3,7 +3,6 @@ const moment = require("moment");
 
 exports.run = (client, message, args) => {
 	let target = message.mentions.members.first() || message.guild.members.get(args[0]) || message.member;
-
 	let createdAt = moment(target.user.createdAt).format("D MMM YYYY, h:mm a");
 	let joinedAt = moment(target.joinedAt).format("D MMM YYYY, h:mm a");
 
@@ -16,7 +15,6 @@ exports.run = (client, message, args) => {
 		.addField("Account Created", createdAt, true)
 		.addField("Joined Server", joinedAt, true)
 		.setTimestamp();
-
 	message.channel.send(embed);
 }
 
