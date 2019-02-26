@@ -33,9 +33,9 @@ if (!file.endsWith(".js")) return;
 //                }
 //            });
 //        });
-    });
-}
-walk();
+//    });
+//}
+//walk();
 
 client.on('ready',() => { // When bot is ready
   console.log(client.user.username + `: Ready to serve ${client.users.size} users in ${client.channels.size} channels of ${client.guilds.size} servers.`);
