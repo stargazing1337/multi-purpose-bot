@@ -40,5 +40,6 @@ client.on('message', (message) => {
   let commandfile = client.commands.get(cmd.slice(prefix.length).toLowerCase()) || client.commands.get(client.aliases.get(cmd.slice(prefix.length).toLowerCase()));
   if(commandfile) commandfile.run(client,message,args);
 };
+  console.log(`${messageArray.slice(1)}`);
 });
 client.login(process.env.TOKEN); // Never show your token
