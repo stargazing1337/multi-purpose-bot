@@ -23,7 +23,7 @@ client.aliases = new Discord.Collection();
 function walk(dir, callback) {
     fs.readdir(dir, function(err, files) {
         if (err) throw err;
-      console.log(`Loading a total of ${files.length} commands.`);
+      console.log(`Loading a total of ${files.length} commands in ${files.name}`);
         files.forEach(function(file) {
             var filepath = path.join(dir, file);
             fs.stat(filepath, function(err,stats) {
