@@ -17,7 +17,8 @@
     "weather-js": "^2.0.0",
     "superagent": "^4.0.0",
     "random-puppy": "^1.1.0",
-    "snekfetch": "^4.0.4"
+    "snekfetch": "^4.0.4",
+    "path": "^0.12.7"
   },
   "engines": {
     "node": "8.x"

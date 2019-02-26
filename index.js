@@ -2,9 +2,9 @@ const botconfig = require('./config.json')
 const Discord = require('discord.js')
 const client = new Discord.Client();
 const fs = require("fs");
+const path = require("path");
 client.commands = new Discord.Collection();
 client.aliases = new Discord.Collection();
-
 
 
 //fs.readdir("./commands/", (err, files) => {
@@ -25,18 +25,12 @@ function walk(dir, callback) {
     fs.readdir(dir, function(err, files) {
         if (err) throw err;
         files.forEach(function(file) {
-          var path = require(`./commands/${file}`)
             var filepath = path.join(dir, file);
             fs.stat(filepath, function(err,stats) {
                 if (stats.isDirectory()) {
                     walk(filepath, callback);
                 } else if (stats.isFile() && file.endsWith('.js')) {
-                        let props = require(`./commands/${file}`);
-    console.log(`Loading Command: ${props.help.name} ✔`);
-    client.commands.set(props.help.name, props);
-        props.conf.aliases.forEach(alias => {
-      client.aliases.set(alias, props.help.name);
-    });
+                  console.log("tRue")
                 }
             });
         });
