@@ -27,6 +27,7 @@ client.on('ready',() => { // When bot is ready
 client.on('message', (message) => {
   if(message.author.bot) return
   let prefixes = JSON.parse(fs.readFileSync("./prefixes.json", "utf8"));
+  let incidentChannel = JSON.parse(fs.readFileSync("./config", "utf8"))
   if (!prefixes[message.guild.id]){
    prefixes[message.guild.id] = { 
      prefixes: process.env.PREFIX
