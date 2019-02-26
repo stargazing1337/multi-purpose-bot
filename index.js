@@ -7,35 +7,19 @@ client.commands = new Discord.Collection();
 client.aliases = new Discord.Collection();
 
 
-//fs.readdir("./commands/", (err, files) => {
-//  if (err) return console.error(err);
-//  console.log(`Loading a total of ${files.length} commands.`);
-//  files.forEach(file => {
-//    if (!file.endsWith(".js")) return;
-//    let props = require(`./commands/${file}`);
-//    console.log(`Loading Command: ${props.help.name} ✔`);
-//    client.commands.set(props.help.name, props);
-//        props.conf.aliases.forEach(alias => {
-//      client.aliases.set(alias, props.help.name);
-//    });
-//  });
-//});
-
-function walk(dir, callback) {
-    fs.readdir(dir, function(err, files) {
-        if (err) throw err;
-        files.forEach(function(file) {
-            var filepath = path.join(dir, file);
-            fs.stat(filepath, function(err,stats) {
-                if (stats.isDirectory()) {
-                    walk(filepath, callback);
-                } else if (stats.isFile() && file.endsWith('.js')) {
-                  console.log("tRue")
-                }
-            });
-        });
+fs.readdir("./commands/", (err, files) => {
+  if (err) return console.error(err);
+  console.log(`Loading a total of ${files.length} commands.`);
+  files.forEach(file => {
+    if (!file.endsWith(".js")) return;
+    let props = require(`./commands/${file}`);
+    console.log(`Loading Command: ${props.help.name} ✔`);
+    client.commands.set(props.help.name, props);
+        props.conf.aliases.forEach(alias => {
+      client.aliases.set(alias, props.help.name);
     });
-}
+  });
+});
 
 client.on('ready',() => { // When bot is ready
   console.log(client.user.username + `: Ready to serve ${client.users.size} users in ${client.channels.size} channels of ${client.guilds.size} servers.`);
