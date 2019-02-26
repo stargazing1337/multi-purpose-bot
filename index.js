@@ -1,4 +1,3 @@
-const botconfig = require('./config.json')
 const Discord = require('discord.js')
 const client = new Discord.Client();
 const fs = require("fs");
@@ -23,7 +22,7 @@ client.aliases = new Discord.Collection();
 function walk(dir, callback) {
     fs.readdir(dir, function(err, files) {
         if (err) throw err;
-
+        console.log(`Loading a total of ${files.length} commands in ${files.name}`);
         files.forEach(function(file) {
             var filepath = path.join(dir, file);
             fs.stat(filepath, function(err,stats) {
@@ -39,7 +38,7 @@ function walk(dir, callback) {
                 }
             });
         });
-            console.log(`Loading a total of ${files.length} commands in ${files.name}`);
+
     });
   
 }
@@ -53,7 +52,6 @@ client.on('ready',() => { // When bot is ready
 client.on('message', (message) => {
   if(message.author.bot) return
   let prefixes = JSON.parse(fs.readFileSync("./prefixes.json", "utf8"));
-  let incidentChannel = JSON.parse(fs.readFileSync("./config", "utf8"))
   if (!prefixes[message.guild.id]){
    prefixes[message.guild.id] = { 
      prefixes: process.env.PREFIX
