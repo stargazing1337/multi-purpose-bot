@@ -19,7 +19,9 @@
     "random-puppy": "^1.1.0",
     "snekfetch": "^4.0.4",
     "path": "^0.12.7",
-    "pornsearch": "^2.4.3"
+    "pornsearch": "^2.4.3",
+    "https": "^1.0.0",
+    "xml2js": "^0.4.19"
   },
   "engines": {
     "node": "8.x"
