@@ -29,7 +29,7 @@ exports.run = (client, message, args) => {
                     });
                 } else {
                     console.log("Nothing found:", argR);
-                    message.channel.send("No images found.");
+                    message.channel.send("No images found. Try different tags.");
                 }
             });
         });

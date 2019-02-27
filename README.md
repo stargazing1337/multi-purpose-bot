@@ -10,7 +10,7 @@ Features
 
 Information Commands
 
-`help` `about` `ping` `weather` 
+`help` `about` `ping` `serverinfo` `userinfo` `weather`
   
 Moderation Commands
 
@@ -23,3 +23,7 @@ User Commands
 Fun Commands
 
 `8ball` `coinflip`
+
+NSFW Commands
+
+`4k` `amateur` `asian` `ass` `bbw` `boobs` `cosplay` `dick` `dickpick` `fuck` `gif` `hentai` `milf` `penis` `public` `pussy` `rule34` `snapchat` `uniform`
