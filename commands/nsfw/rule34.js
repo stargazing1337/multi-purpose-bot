@@ -27,19 +27,16 @@ exports.run = (client, message, args) => {
                     message.channel.send({
                         files: [r34Pic]
                     });
-
                 } else {
                     console.log("Nothing found:", argR);
-                    message.channel.send("Nobody here but us chickens!");
+                    message.channel.send("No images found.");
                 }
-
             });
         });
     }).on('error', function(e) {
         console.log("Got an error: ", e);
     });
 }
-
 
 exports.conf = {
     enabled: true,
