@@ -47,7 +47,7 @@ client.on('message', (message) => {
   let prefix = prefixes[message.guild.id].prefixes;
   if(message.content.startsWith(prefix)){
   let commandfile = client.commands.get(cmd.slice(prefix.length).toLowerCase()) || client.commands.get(client.aliases.get(cmd.slice(prefix.length).toLowerCase()));
-  if(commandfile) commandfile.run(client,message,args);
+  if(commandfile) commandfile.run(client,message,args,prefixes,prefix);
 };
   console.log(`${messageArray.slice(1)}`);
 });

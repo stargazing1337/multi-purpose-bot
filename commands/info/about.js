@@ -1,14 +1,7 @@
 const {RichEmbed} = require("discord.js")
 const fs = require("fs");
 
-exports.run = async (client, message, args) => {
-  
-  let prefixes = JSON.parse(fs.readFileSync("./prefixes.json", "utf8"));
-  if (!prefixes[message.guild.id]){
-   prefixes[message.guild.id] = { 
-     prefixes: process.env.PREFIX
-   };
-  };
+exports.run = async (client, message, args, prefixes, prefix) => {
   
   let totalSeconds = (client.uptime / 1000);
   let hours = Math.floor(totalSeconds / 3600);
@@ -29,7 +22,7 @@ exports.run = async (client, message, args) => {
   .addField(`Discord`, `[Not available yet]`, true)
   .addField(`Invite`, `[Not available yet]`, true)
   .addField(`Developer`, `Kotobro#5754`, true)
-  .setFooter(`Prefix: ${prefixes[message.guild.id].prefixes} | This bot is still under construction`)
+  .setFooter(`Prefix: ${prefix} | This bot is still under construction`)
   .setTimestamp()
   message.channel.send(embed)   
 }
