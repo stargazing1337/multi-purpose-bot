@@ -3,8 +3,7 @@ const xml2js = require('xml2js');
 
 exports.run = (client, message, args) => {
     if (!message.channel.nsfw) return message.channel.send(":underage: NSFW Command. Please switch to NSFW channel in order to use this command.")
-
-try {
+    try {
             // Currently there is something wrong with Commando nsfw detection... So better make sure this works
             if(message.message.channel.nsfw){
                 if(args[0] === undefined){
