@@ -14,15 +14,15 @@ Information Commands
   
 Moderation Commands
 
-`ban` `kick` `prune` `prefix` `tempmute`  
+`addrole` `ban` `kick` `prune` `removerole` `setprefix` `say` `tempmute`
 
 User Commands
 
-`report` `serverinfo` `userinfo`  
+`report`
 
 Fun Commands
 
-`8ball` `coinflip`
+`8ball` `cat` `coinflip` `dog`
 
 NSFW Commands
 
