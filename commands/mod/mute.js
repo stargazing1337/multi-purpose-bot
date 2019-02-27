@@ -25,6 +25,11 @@ exports.run = async (client, message, args) => {
   }
   await(tomute.addRole(muterole.id));
   message.reply(`<@${tomute.id}> has been muted`);
+  
+  tomute.addRole(muterole.id).then(() => {
+  message.delete()
+  tomute.send(`You have been muted in ${message.guild.name}.`)
+  })
 }
 
 exports.conf = {
