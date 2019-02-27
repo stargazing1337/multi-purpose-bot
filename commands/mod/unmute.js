@@ -5,7 +5,6 @@ exports.run = async (client, message, args) => {
   let muterole = message.guild.roles.find(`name`, "Muted");
   tomute.removeRole(muterole.id);
   message.channel.send(`<@${tomute.id}> has been unmuted!`);
-
 }
 
 exports.conf = {
@@ -16,7 +15,7 @@ exports.conf = {
   };
   
   exports.help = {
-    name: 'tempmute',
+    name: 'unmute',
     description: 'Gives you a random response to a question.',
     usage: '8ball [question]'
 };

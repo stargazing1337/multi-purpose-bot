@@ -13,7 +13,10 @@ exports.run = async (client, message, args) => {
       message.guild.channels.forEach(async (channel, id) => {
         await channel.overwritePermissions(muterole, {
           SEND_MESSAGES: false,
-          ADD_REACTIONS: false
+          ADD_REACTIONS: false,
+          SEND_TTS_MESSAGES: false,
+          ATTACH_FILES: false,
+          SPEAK: false
         });
       });
     }catch(e){
@@ -21,7 +24,7 @@ exports.run = async (client, message, args) => {
     }
   }
   await(tomute.addRole(muterole.id));
-  message.reply(`<@${tomute.id}> has been muted>`);
+  message.reply(`<@${tomute.id}> has been muted`);
 }
 
 exports.conf = {
