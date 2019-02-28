@@ -1,6 +1,8 @@
 const {RichEmbed} = require("discord.js")
 
-exports.run = async (client, message, args, prefixes, prefix) => {
+exports.run = async (client, message, args, prefixes, prefix,props) => {
+
+if (!args[0]){
     const embed = new RichEmbed()
     .setColor("#7289DA")
     .setTitle(`Help Menu`)
@@ -12,9 +14,8 @@ exports.run = async (client, message, args, prefixes, prefix) => {
     .setFooter(`Prefix: ${prefix} | This bot is still under construction`)
     .setTimestamp()
     message.channel.send(embed)
-
-  if (args[0]) {
-  console.log(true")
+  } else {
+    console.log("Theres something here")
   }
 }
 
