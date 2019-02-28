@@ -8,7 +8,7 @@ exports.run = async (client, message, args, prefixes, prefix) => {
     .addField(`Moderation Commands`,"`addrole` `ban` `kick` `prune` `removerole` `setprefix` `say` `tempmute`")
     .addField(`User Commands`,"`report`")
     .addField(`Fun Commands`,"`8ball` `cat` `coinflip` `dog`")
-    .addField(`NSFW Commands`,"`4k` `amateur` `asian` `ass` `bbw` `boobs` `cosplay` `dick` `dickpick` `fuck` `gif` `hentai` `milf` `penis` `public` `pussy` `rule34` `snapchat` `uniform`")
+    .addField(`NSFW Commands`,"`4k` `amateur` `asian` `ass` `bbw` `boobs` `cosplay` `dick` `dickpick` `gif` `hentai` `milf` `penis` `public` `pussy` `rule34` `snapchat` `uniform`")
     .setFooter(`Prefix: ${prefix} | This bot is still under construction`)
     .setTimestamp()
     message.channel.send(embed)    
