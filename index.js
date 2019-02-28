@@ -17,6 +17,7 @@ function walk(dir, callback) {
                 } else if (stats.isFile() && file.endsWith('.js')) {
                     let props = require(`./${filepath}`);
                     console.log(`Loading Command: ${props.help.name} ✔`);
+                    console.log(`${props.help.description}`)
                     client.commands.set(props.help.name, props);
                     props.conf.aliases.forEach(alias => {
                     client.aliases.set(alias, props.help.name);
@@ -27,6 +28,8 @@ function walk(dir, callback) {
 
     });
 }; walk(`./commands/`)
+
+
 
 client.on('ready',() => { // When bot is ready
   console.log(client.user.username + `: Ready to serve ${client.users.size} users in ${client.channels.size} channels of ${client.guilds.size} servers.`);

@@ -11,7 +11,11 @@ exports.run = async (client, message, args, prefixes, prefix) => {
     .addField(`NSFW Commands`,"`4k` `amateur` `asian` `ass` `bbw` `boobs` `cosplay` `dick` `dickpick` `gif` `hentai` `milf` `penis` `public` `pussy` `rule34` `snapchat` `uniform`")
     .setFooter(`Prefix: ${prefix} | This bot is still under construction`)
     .setTimestamp()
-    message.channel.send(embed)    
+    message.channel.send(embed)
+
+  if (args[0]) {
+  console.log(true")
+  }
 }
 
 exports.conf = {
@@ -23,6 +27,6 @@ exports.conf = {
   
   exports.help = {
     name: 'help',
-    description: 'Gives you a random response to a question.',
+    description: 'Lists all commands',
     usage: '8ball [question]'
 };

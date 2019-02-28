@@ -22,6 +22,6 @@ exports.conf = {
   
   exports.help = {
     name: 'coinflip',
-    description: 'Gives you a random response to a question.',
+    description: 'Flips a coin',
     usage: '8ball [question]'
 };
