@@ -1,11 +1,11 @@
-const Discord = require("discord.js")
-const booru = require('booru');
+
 
 exports.run = (client, message, args) => {
 if (!message.channel.nsfw) return message.channel.send(":underage: NSFW Command. Please switch to NSFW channel in order to use this command.")
 
 var query = args.slice(0).join(" ");
-
+const Discord = require("discord.js")
+const booru = require('booru');
 booru.search('safebooru', [query], {
         limit: 1,
         random: true
