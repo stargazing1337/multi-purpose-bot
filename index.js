@@ -29,8 +29,6 @@ function walk(dir, callback) {
     });
 }; walk(`./commands/`)
 
-
-
 client.on('ready',() => { // When bot is ready
   console.log(client.user.username + `: Ready to serve ${client.users.size} users in ${client.channels.size} channels of ${client.guilds.size} servers.`);
   client.user.setActivity(`users type !help`, {type: "WATCHING"});
@@ -51,7 +49,7 @@ client.on('message', (message) => {
   if(message.content.startsWith(prefix)){
   let commandfile = client.commands.get(cmd.slice(prefix.length).toLowerCase()) || client.commands.get(client.aliases.get(cmd.slice(prefix.length).toLowerCase()));
   if(commandfile) commandfile.run(client,message,args,prefixes,prefix);
-};
+}else return;
   console.log(`${messageArray.slice(1)}`);
 });
 client.login(process.env.TOKEN); // Never show your token
