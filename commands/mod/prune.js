@@ -8,7 +8,7 @@ exports.run = async (client, message, args, con) => {
 		amount = 100
 	} else {
 		amount = parseInt(args[0]);
-		if(!amount || amount < 1 && amount < 100) return message.channel.send("Usage: !prune <# between 1 and 100>");
+		if(!amount || amount < 1 && amount > 100) return message.channel.send("Usage: !prune <# between 1 and 100>");
 		amount = Math.min(amount + 1, 100);
 	}
 

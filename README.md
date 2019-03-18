@@ -26,4 +26,4 @@ Fun Commands
 
 NSFW Commands
 
-`4k` `amateur` `asian` `ass` `bbw` `boobs` `cosplay` `dick` `dickpick` `fuck` `gif` `hentai` `milf` `penis` `public` `pussy` `rule34` `snapchat` `uniform`
+`4k` `amateur` `asian` `ass` `bbw` `boobs` `cosplay` `dick` `fuck` `gif` `hentai` `milf` `public` `pussy` `rule34` `snapchat` `uniform`
