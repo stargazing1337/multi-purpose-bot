@@ -1,4 +1,4 @@
-const {RichEmbed} = require("discord.js")
+ ,mconst {RichEmbed} = require("discord.js")
 
 exports.run = async (client, message, args) => {
     var pong = `It took ` + Math.round(client.ping) + `ms to ping.`
