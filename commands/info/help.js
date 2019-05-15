@@ -1,6 +1,6 @@
 const {RichEmbed} = require("discord.js")
 
-exports.run = async (client, message, args, prefixes, prefix,props) => {
+exports.run = async (client, message, args, prefix, prefixes, props) => {
 
 if (!args[0]){
     const embed = new RichEmbed()
