@@ -1,6 +1,6 @@
 const {RichEmbed} = require("discord.js")
 
-exports.run = async (client, message, args, prefix, prefixes, props) => {
+exports.run = async (client, message, args, prefix, prefixes) => {
 
 if (!args[0]){
     const embed = new RichEmbed()
@@ -11,7 +11,7 @@ if (!args[0]){
     .addField(`User Commands`,"`report`")
     .addField(`Fun Commands`,"`8ball` `cat` `coinflip` `dog`")
     .addField(`NSFW Commands`,"`4k` `amateur` `asian` `ass` `bbw` `boobs` `cosplay` `dick` `dickpick` `gif` `hentai` `milf` `penis` `public` `pussy` `rule34` `snapchat` `uniform`")
-    .setFooter(`Prefix: ${JSON.stringify(prefix)} | This bot is still under construction`)
+    .setFooter(`Prefix: ${prefix} | This bot is still under construction`)
     .setTimestamp()
     message.channel.send(embed)
     message.author.send(embed)
