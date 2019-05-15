@@ -14,8 +14,9 @@ if (!args[0]){
     .setFooter(`Prefix: ${prefix} | This bot is still under construction`)
     .setTimestamp()
     message.channel.send(embed)
+    message.author.send(embed)
   } else {
-    console.log("Theres something here")
+    console.log("Add in description")
   }
 }
 
