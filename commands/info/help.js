@@ -1,13 +1,13 @@
 const {RichEmbed} = require("discord.js")
 
-exports.run = async (client, message, args, prefix, prefixes) => {
+exports.run = async (client, message, args, prefix, props) => {
 
 if (!args[0]){
     const embed = new RichEmbed()
     .setColor("#7289DA")
     .setTitle(`Help Menu`)
     .addField(`Information Commands`, "`help` `about` `ping` `serverinfo` `userinfo` `weather`")
-    .addField(`Moderation Commands`,"`addrole` `ban` `kick` `prune` `removerole` `prefix` `say` `tempmute`")
+    .addField(`Moderation Commands`,"`addrole` `ban` `kick` `prune` `removerole` `setprefix` `say` `tempmute`")
     .addField(`User Commands`,"`report`")
     .addField(`Fun Commands`,"`8ball` `cat` `coinflip` `dog`")
     .addField(`NSFW Commands`,"`4k` `amateur` `asian` `ass` `bbw` `boobs` `cosplay` `dick` `dickpick` `gif` `hentai` `milf` `penis` `public` `pussy` `rule34` `snapchat` `uniform`")
@@ -16,7 +16,7 @@ if (!args[0]){
     message.channel.send(embed)
     message.author.send(embed)
   } else {
-    console.log("Add in description")
+    console.log("Theres something here")
   }
 }
 

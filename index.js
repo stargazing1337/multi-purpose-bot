@@ -45,10 +45,10 @@ client.on('message', (message) => {
   let messageArray = message.content.split(" ");
   let cmd = messageArray[0]
   let args = messageArray.slice(1);
-  let prefix = prefixes[message.guild.id].prefix;
+  let prefix = JSON.parse(fs.readFileSync("./prefixes.json", "utf8"))[message.guild.id].prefix;
   if(message.content.startsWith(prefix)){
   let commandfile = client.commands.get(cmd.slice(prefix.length).toLowerCase()) || client.commands.get(client.aliases.get(cmd.slice(prefix.length).toLowerCase()));
-  if(commandfile) commandfile.run(client, message, args, prefixes, prefix);
+  if(commandfile) commandfile.run(client, message, args, prefix);
 }else return;
 });
 client.login(process.env.TOKEN); // Never reveal your token to others
