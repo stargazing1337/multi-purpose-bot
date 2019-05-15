@@ -39,13 +39,13 @@ client.on('message', (message) => {
   let prefixes = JSON.parse(fs.readFileSync("./prefixes.json", "utf8"));
   if (!prefixes[message.guild.id]){
    prefixes[message.guild.id] = { 
-     prefix: process.env.PREFIX
+     prefixes: process.env.PREFIX
    };
   };
   let messageArray = message.content.split(" ");
   let cmd = messageArray[0]
   let args = messageArray.slice(1);
-  let prefix = JSON.parse(fs.readFileSync("./prefixes.json", "utf8"))[message.guild.id].prefix;
+  let prefix = prefixes[message.guild.id].prefixes;
   if(message.content.startsWith(prefix)){
   let commandfile = client.commands.get(cmd.slice(prefix.length).toLowerCase()) || client.commands.get(client.aliases.get(cmd.slice(prefix.length).toLowerCase()));
   if(commandfile) commandfile.run(client, message, args, prefixes, prefix);
