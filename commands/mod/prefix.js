@@ -6,7 +6,7 @@ exports.run = async (client, message, args, prefix) => {
   if (!args[0] || args[0 == "help"]) return message.reply(`Usage: ${prefix}prefix <desired prefix here>`)
   let prefixes = JSON.parse(fs.readFileSync("./prefixes.json", "utf8"))
   
-  prefixes [message.guild.id] = {
+prefixes [message.guild.id] = {
   prefix: args.slice(0).join(" ")
   };
   
