@@ -37,7 +37,7 @@ client.on('ready',() => {
 client.on('message', (message) => {
   if(message.author.bot) return
   let prefixes = JSON.parse(fs.readFileSync("./prefixes.json", "utf8"));
-  console.log(`${prefixes[message.guild.id]}`);
+  console.log(`${prefixes[message.guild.id].prefix}`);
   if (!prefixes[message.guild.id].prefix){
    prefixes[message.guild.id] = { 
      prefix: process.env.PREFIX
