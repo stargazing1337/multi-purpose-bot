@@ -37,11 +37,9 @@ client.on('ready',() => {
 client.on('message', (message) => {
   if(message.author.bot) return
   let prefixes = JSON.parse(fs.readFileSync("./prefixes.json", "utf8"));
-  console.log(`${prefixes[message.guild.id].prefix}`);
-  if (!prefixes[message.guild.id].prefix){
-   prefixes[message.guild.id] = { 
-     prefix: process.env.PREFIX
-   };
+  console.log(`${JSON.parse(fs.readFileSync("./prefixes.json", "utf8"))[message.guild.id].prefix}`);
+  if (!JSON.parse(fs.readFileSync("./prefixes.json", "utf8"))[message.guild.id].prefix){
+   JSON.parse(fs.readFileSync("./prefixes.json", "utf8"))[message.guild.id].prefix = process.env.PREFIX;
   };
   let messageArray = message.content.split(" ");
   let cmd = messageArray[0]
