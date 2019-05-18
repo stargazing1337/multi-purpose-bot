@@ -40,7 +40,7 @@ client.on('message', (message) => {
   console.log(`${JSON.parse(fs.readFileSync("./prefixes.json", "utf8"))[message.guild.id].prefix}`);
   console.log(`${process.env.PREFIX}`)
   if (!JSON.parse(fs.readFileSync("./prefixes.json", "utf8"))[message.guild.id].prefix){
-   JSON.parse(fs.writeFileSync("./prefixes.json", "utf8"))[message.guild.id].prefix = process.env.PREFIX;
+   JSON.parse(fs.writeFile("./prefixes.json", "utf8"))[message.guild.id].prefix = process.env.PREFIX;
   };
   let messageArray = message.content.split(" ");
   let cmd = messageArray[0]
