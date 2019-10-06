@@ -15,12 +15,12 @@ function walk(dir, callback) {
                 if (stats.isDirectory()) {
                     walk(filepath, callback);
                 } else if (stats.isFile() && file.endsWith('.js')) {
-                    let props = require(`./${filepath}`);
-                    console.log(`Loading Command: ${props.help.name} ✔`);
-                    console.log(`${props.help.description}`)
-                    client.commands.set(props.help.name, props);
-                    props.conf.aliases.forEach(alias => {
-                    client.aliases.set(alias, props.help.name);
+                    let filepath = require(`./${filepath}`);
+                    console.log(`Loading Command: ${filepath.help.name} ✔`);
+                    console.log(`${filepath.help.description}`)
+                    client.commands.set(filepath.help.name, filepath);
+                    filepath.conf.aliases.forEach(alias => {
+                    client.aliases.set(alias, filepath.help.name);
                   });
                 }
             });
