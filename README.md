@@ -1,7 +1,7 @@
-ModBot
+mutli purpose discord bot
 =================
 
-Easily expandable, customizable and fully featured Discord moderation bot
+easily expandable, customizable and fully featured Discord moderation bot
 ___
 
 Features  
